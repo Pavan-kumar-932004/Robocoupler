@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVU</title>
+    
+<style>
+  *{
+          padding:0;
+          font-family: Calibri, Arial, sans-serif;
+          
+          }
+  .heading{
+    background-color: white;
+        width: 100vw;
+        height: 150px;
+        margin-left: calc(50% - 50vw); 
+        margin-right: calc(50% - 50vw);
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+            }
+            .heading h1{
+                
+                flex-grow: 1;
+            }
+            .img{
+                vertical-align: middle;
+                margin-left:auto;
+                margin-right:auto;
+                
+            }
+            a:link {
+             color: rgb(1, 9, 100);
+             background-color: transparent;
+             text-decoration: none;
+             margin-right:50px;
+             
+             font-weight:bold;
+             border-radius: 5px;
+            }
+            a:hover {
+            color: rgb(80, 115, 242);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            a:active {
+            color: rgb(32, 2, 110);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+    h1{
+    color: #0C134F;
+    font-size:xx-large;
+    text-align: center;
+    margin-top:190px;
+}
+body{
+    background-color: #97DEF9;
+    font-size:20px;
+    
+}
+
+input{
+  width: 200px;
+  padding: 1px;
+  border-radius: 4px;
+  background-color:#FFF4E0;
+  text-emphasis-color: black;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ok {
+  background-color: blue; /* Green */
+}
+
+.delete {
+  background-color: blue; /* Red */
+}
+.close {
+  background-color: blue; 
+}
+.button:hover {
+  opacity: 0.8;
+}
+            
+        </style>
+    
+    <style>
+ .centrebox{
+
+border-style:groove;
+padding: 10px;
+background: #6C9BCF;
+border: solid 1px black;
+border-radius: 3px;
+width:650px;
+
+}
+.scrolling-text marquee {
+font-weight: bold;
+width: 100%;
+}
+.scrolling-text {
+padding: 5px;
+background-color: #006CDF;
+color: #fff;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+width:auto;
+}
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+.dropdown-content {
+            padding:8px 16px;
+            margin-bottom: 50px;
+            display: none;
+            position: absolute;
+            background-color:rgba(255, 255, 255,0.8);
+            min-width: 190px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+            font-size:14px; 
+            border-radius: 15px;
+            align-items: center;
+            justify-content: space-between;
+            margin:2px 0;
+        }
+        .dropdown:hover .dropdown-content {display:block;}
+.dropdown:hover .dropdown-content {display: block;}
+   
+</style>
+</head>
+      <center>
+        <body>
+          
+          <div class="heading">
+            <center>
+            <img src="logo.png" width="70">
+            <img src="img.jpg" width="290"  >
+            <img src="msme.jpg" width="100">
+            
+        </center><br>
+        <nav class="w3-bar w3-black">
+          <center>
+              <div class="dropdown">
+                  <a href="#home" class="w3-button w3-bar-item">EDIT</a>
+                  <div class="dropdown-content">
+                      <a href="#about">Name Master</a><br>
+                      <a href="#services">Institution Master</a><br>
+                      <a href="#contact">Institution Links</a>
+                  </div>
+              </div>
+              <div class="dropdown">
+                <a href="#band" class="w3-button w3-bar-item">VIEW</a>
+                <div class="dropdown-content">
+                    <a href="#about">Yearly Dose Data</a><br>
+                    <a href="#services">LifeTime Dose Data </a><br>
+                    <a href="#contact">Institution Dose Data Statistics</a><br>
+                    <a href="#contact">Operator Information View</a>
+                </div>
+            </div>
+            <div class="dropdown">
+              <a href="#tour" class="w3-button w3-bar-item">SEARCH</a>
+              <div class="dropdown-content">
+                <a href="ims.html">Institution Master Search</a><br>
+                <a href="nms.html">Name Master Search</a><br>
+
+            </div>
+            </div>
+            <div class="dropdown">
+                <a href="#contact" class="w3-button w3-bar-item">OPERATOR INFO</a>
+                <div class="dropdown-content">
+                    <a href="operator_creationn.html">Operator Creation</a><br>
+                    <a href="cp1.html">Change Password</a><br>
+                    <a href="ovu.html">Operator Validity Updation</a><br>
+                    <a href="task_allocation.html">Operator Task Allotment</a><br>
+                    <a href="reset.html">Reset Password</a><br>
+
+                  </div>
+                  </div>
+                  <div class="dropdown">
+                      <a href="#tour" class="w3-button w3-bar-item">PROCESS</a>
+                      <div class="dropdown-content">
+                          <a href="#about">Input File Handling</a><br>
+                          <a href="#services">Radiation Worker Info</a><br>
+                          <a href="#services">Data Export</a><br>
+                          <a href="#services">Dosedata Updation</a><br>
+                          <a href="#services">Dosedata Rollback</a><br>
+                          <a href="#services">Dosedata Correction</a><br>
+                          <a href="#services">Database Statistics</a><br>
+  
+  
+                      </div>
+                      </div>
+                      <div class="dropdown">
+                          
+                          
+                          <a href="#tour" class="w3-button w3-bar-item">REPORTS</a>
+                          <div class="dropdown-content">
+                              <a href="#about">Monthly Dose Report</a><br>
+                              <a href="#services">Annual Dose Report</a><br>
+                              <a href="#services">Annual BlockWise Report</a><br>
+                              <a href="#services">Name List Report</a><br>
+                              <a href="#services">Personnel Data Report</a><br>
+                              <a href="#services">Institute Address Report</a><br>
+                              <a href="#services">Status Report Of Radiation Works</a><br>
+                              <a href="#services">Dose Records Report</a><br>
+                              <a href="#services">Institution Status List Report</a><br>
+                              <a href="#services">Radiation Analysis 1</a><br>
+                              <a href="#services">Dose Analysis Report</a><br>
+                              <a href="#services">Radiation Analysis 2</a><br>
+                              <a href="#services">Graphical Analysis 1</a><br>
+                              <a href="#services">Graphical Analysis 2</a><br>
+                              <a href="#services">Institution Master Report</a><br>
+                              <a href="#services">Month Wise Report Limited columns</a><br>
+                              <a href="#services">Names Master Report</a><br>
+                              <a href="#services">Photo & Fingerprint Status Report</a><br>
+                              
+      
+                          </div>
+                          </div>
+                          <div class="dropdown">
+                              <a href="#tour" class="w3-button w3-bar-item">BIO REPORTS</a>
+                              <div class="dropdown-content">
+                                  <a href="#about">Fingerprint Reports</a><br>
+                                  <a href="#services">Photo Reports</a><br>
+          
+                              </div>
+                              </div>
+                              <div class="dropdown">
+                                  <a href="#tour" class="w3-button w3-bar-item">HELP</a>
+                                  <div class="dropdown-content">
+                                      <a href="#about">Photo & FP Display</a><br>
+                                      <a href="#services">Checklist Generation</a><br>
+                                      <a href="#services">Printer Installation</a><br>
+                                      <a href="#services">Input Data Format</a><br>
+                                      <a href="#services">FAQ(frequently asked questions)</a><br>
+                                      <a href="#services">SOP Database</a><br>
+
+              
+                                  </div>
+                                  </div>
+            </center>
+            </nav>
+            
+            </div>
+
+        <center>
+          <h1>OPEARTOR VALIDITY UPDATION</h1>
+          </center>
+            <div class="centrebox">
+                <table>
+                    <tr>
+                        <td>Monitoring Centre:</td>
+                        <td><input type="text"  /></td>
+                    </tr>
+                    <tr>
+                    <td >Operator Code:</td> 
+                            <td><select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option></select>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Operator Name:</td>
+                        <td><input type="text"  /></td>
+                    </tr>
+                    <tr>
+                        <td>Validity Start Date:</td>
+                        <td><input type="Date" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Validity End Date:</td>
+                        <td><input type="Date"  /></td>
+                    </tr>
+                </table>
+               
+                
+            </div><br>
+
+            Msg/err 
+            <input type="text"><br><br>
+            <button  class="button ok" >SAVE</button>
+            <button class="button delete">RESET</button>
+            <button class="button close">CLOSE</button>
+        </body>
+        </center>
+        <div class="scrolling-text">
+            <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
+          </div>
+    </head>
+</html>

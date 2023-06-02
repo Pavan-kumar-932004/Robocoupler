@@ -1,0 +1,360 @@
+<html>
+    <head>
+        <title>operatorinfo</title>
+    </head>
+    <body bgcolor="blue">
+        
+        <style>
+            .heading{
+                background-color: white; /* Adds white background to the heading */
+            padding: 10px;
+            }
+            .heading h1{
+                margin:0;
+                flex-grow: 1;
+            }
+            .img{
+                vertical-align: middle;
+                margin-left:auto;
+                margin-right:auto;
+                
+            }
+            /* .heading img:last-child{ 
+                float:right;
+
+                position:relative;
+                top:-20px;
+            }
+           
+            
+            .top{
+                border: 1px  rgb(30, 1, 117);
+                width:1470px;
+                background-color: rgb(6, 5, 71);
+                padding:25px;
+                border-radius: 5px;
+                margin-top:9px;
+                margin-left: 0px;
+                
+            }*/
+            a:link {
+             color: rgb(1, 9, 100);
+             background-color: transparent;
+             text-decoration: none;
+             margin-right:50px;
+             
+             font-weight:bold;
+             border-radius: 5px;
+            }
+            a:hover {
+            color: rgb(80, 115, 242);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            a:active {
+            color: rgb(32, 2, 110);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            body {
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgb(6, 88, 143) 68%, rgb(28, 5, 234) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    max-width:5000px; 
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+.dropdown-content {
+            padding:8px 16px;
+            margin-bottom: 50px;
+            display: none;
+            position: absolute;
+            background-color:rgba(255, 255, 255,0.8);
+            min-width: 190px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+            font-size:small ;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: space-between;
+            margin:2px 0;
+        }
+/*.dropdown-content a {
+        color: rgb(4, 0, 37);
+        padding: 3px 4px;
+        text-decoration: none;
+        display: block;
+        }
+.dropdown-content a:hover {background-color: #104cb98c;}*/
+.dropdown:hover .dropdown-content {display:block;}
+.dropdown:hover .dropdown-content {display: block;}
+            
+        .info{
+            width:400px;
+            margin-top:100px;
+            margin-left:50px;
+            font-size:large ;
+            color:azure;
+            text-align: justify;
+        
+        }
+        .video-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    top: 1%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    pointer-events: none;
+    
+    
+
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+    .scrolling-text marquee {
+font-weight: bold;
+width: 100%;
+}
+.scrolling-text {
+padding: 5px;
+background-color: #006CDF;
+color: #fff;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+width:auto;
+}
+  
+
+        </style>
+         <div class="context">
+            
+        </div>
+    
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+         </div>
+    
+    
+    
+
+        <div class="heading">
+            <center>
+            <a href="file:///C:/Users/Sanjana/Desktop/Robocoupler/project/Main_page/Main_page_code.html"><img src="logo.png" width="70"></a>
+            <a href="file:///C:/Users/Sanjana/Desktop/Robocoupler/project/Main_page/Main_page_code.html"><img src="img.jpg" width="290"></a>
+            <img src="msme.jpg" width="100">
+            
+            
+        </center><br>
+        <nav class="w3-bar w3-black">
+            <center>
+                <div class="dropdown">
+                    <a href="#home" class="w3-button w3-bar-item">EDIT</a>
+                    <div class="dropdown-content">
+                        <a href="#about">Name Master</a><br>
+                        <a href="#services">Institution Master</a><br>
+                        <a href="#contact">Institution Links</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#band" class="w3-button w3-bar-item">VIEW</a>
+                    <div class="dropdown-content">
+                        <a href="#about">Yearly Dose Data</a><br>
+                        <a href="#services">LifeTime Dose Data </a><br>
+                        <a href="#contact">Institution Dose Data Statistics</a><br>
+                        <a href="#contact">Operator Information View</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#tour" class="w3-button w3-bar-item">SEARCH</a>
+                    <div class="dropdown-content">
+                        <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Search\institution master search\ims.html">Institution Master Search</a><br>
+                        <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Search\name_master_search\nms.html">Name Master Search</a><br>
+
+                    </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#contact" class="w3-button w3-bar-item">OPERATOR INFO</a>
+                        <div class="dropdown-content">
+                            <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Operator_info\Operator_Creation\operator_creationn.html">Operator Creation</a><br>
+                            <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Operator_info\cp\cp1.html">Change Password</a><br>
+                            <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Operator_info\operator_validity_updation\ovu.html">Operator Validity Updation</a><br>
+                            <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Operator_info\task_allocationn\task_allocation.html">Operator Task Allotment</a><br>
+                            <a href="C:\Users\Sanjana\Desktop\Robocoupler\frontend_team\Operator_info\Reset_password\reset.html">Reset Password</a><br>
+    
+                        </div>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#tour" class="w3-button w3-bar-item">PROCESS</a>
+                            <div class="dropdown-content">
+                                <a href="#about">Input File Handling</a><br>
+                                <a href="#services">Radiation Worker Info</a><br>
+                                <a href="#services">Data Export</a><br>
+                                <a href="#services">Dosedata Updation</a><br>
+                                <a href="#services">Dosedata Rollback</a><br>
+                                <a href="#services">Dosedata Correction</a><br>
+                                <a href="#services">Database Statistics</a><br>
+        
+        
+                            </div>
+                            </div>
+                            <div class="dropdown">
+                                
+                                
+                                <a href="#tour" class="w3-button w3-bar-item">REPORTS</a>
+                                <div class="dropdown-content">
+                                    <a href="#about">Monthly Dose Report</a><br>
+                                    <a href="#services">Annual Dose Report</a><br>
+                                    <a href="#services">Annual BlockWise Report</a><br>
+                                    <a href="#services">Name List Report</a><br>
+                                    <a href="#services">Personnel Data Report</a><br>
+                                    <a href="#services">Institute Address Report</a><br>
+                                    <a href="#services">Status Report Of Radiation Works</a><br>
+                                    <a href="#services">Dose Records Report</a><br>
+                                    <a href="#services">Institution Status List Report</a><br>
+                                    <a href="#services">Radiation Analysis 1</a><br>
+                                    <a href="#services">Dose Analysis Report</a><br>
+                                    <a href="#services">Radiation Analysis 2</a><br>
+                                    <a href="#services">Graphical Analysis 1</a><br>
+                                    <a href="#services">Graphical Analysis 2</a><br>
+                                    <a href="#services">Institution Master Report</a><br>
+                                    <a href="#services">Month Wise Report Limited columns</a><br>
+                                    <a href="#services">Names Master Report</a><br>
+                                    <a href="#services">Photo & Fingerprint Status Report</a><br>
+                                    
+            
+                                </div>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="#tour" class="w3-button w3-bar-item">BIO REPORTS</a>
+                                    <div class="dropdown-content">
+                                        <a href="#about">Fingerprint Reports</a><br>
+                                        <a href="#services">Photo Reports</a><br>
+                
+                                    </div>
+                                    </div>
+                                    <div class="dropdown">
+                                        <a href="#tour" class="w3-button w3-bar-item">HELP</a>
+                                        <div class="dropdown-content">
+                                            <a href="#about">Photo & FP Display</a><br>
+                                            <a href="#services">Checklist Generation</a><br>
+                                            <a href="#services">Printer Installation</a><br>
+                                            <a href="#services">Input Data Format</a><br>
+                                            <a href="#services">FAQ(frequently asked questions)</a><br>
+                                            <a href="#services">SOP Database</a><br>
+
+                    
+                                        </div>
+                                        </div>
+
+                                        </center>
+    
+    
+                                         </nav>
+            
+                                </div>
+                                <div class="info">
+                                    <h4>ABOUT US</h4>
+                                    <h5>PRAVEEN MALLA - CEO of Robocoupler</h5>
+                                    <p>Robocoupler Pvt.Ltd is India's First
+                                         Andro Humanoid Robots Manufacturing company,which is located at
+                                          Visakhapatnam Andhra Pradesh. We deal with comprehesive Robotic manufacture and solutions
+                                        with real time Embedded Systems and Mechatronics.</p>
+                                       
+                                </div>
+                                <div class="video-container">
+                                <video controls autoplay muted loop>
+                                    <source src="RCVideo.mp4" type="video/mp4" id="myVideo">
+
+                                   
+                        
+                                </video>
+                               </div>
+                               <div class="scrolling-text">
+                                <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
+                              </div>
+                            
+        
+       
+      
+   </body>
+</html>
