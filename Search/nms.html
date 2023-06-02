@@ -51,17 +51,26 @@
             }
         
         h1{text-align: center;color: black;}
-        .final{margin-left: 40px;color: black; font-size: 20px; margin-top:140px;}
-        .tab{margin-left: 150px;margin-right: auto; float:left;}
-        .tab1{margin-left: auto;margin-right: 150px; float:right;}
+        .final{color: black; font-size: 20px; margin-top:140px;}
         input[type=mc]{width: 125%;border: inset;background-color: lightgray;}
         input[type=yer]{width: 50%;}
         
-        .radio{margin-left: 70px;text-align: center;padding-top: 10px;margin-right: auto;margin-top:280px;}
         /*input[type=msgs]{width: 25% ;border: inset;background-color: lightgray; margin-top: 200px;}*/
 
+        button[type=button_1]:hover{
+          opacity: 0.8;
+      background-color:#333333;
+        }
+        button[type=button_2]:hover{
+          opacity: 0.8;
+      background-color:#333333;
+        }
+        button[type=button_3]:hover{
+          opacity: 0.8;
+      background-color:#333333;
+        }
         button[type=button_1]{
-          background-color:blue;
+          background-color:#4CAF50;
           color: white;
           border:none;
           margin:5px;
@@ -73,7 +82,7 @@
         }
                 
         button[type=button_2]{
-          background-color: blue;
+          background-color: #f44336;
           color: white;
           border:none;
           margin:50px;
@@ -85,7 +94,7 @@
         }
                 
         button[type=button_3]{
-          background-color: blue;
+          background-color: #2196F3;
           color: white;
           border: none;
           margin:5px;
@@ -145,6 +154,10 @@ left: 0;
 right: 0;
 width:auto;
 }
+.button:hover {
+      opacity: 0.8;
+      background-color:#333333;
+    }
             
          
     </style>
@@ -265,154 +278,163 @@ width:auto;
       
       </div>
     
+   <center>
     <div class="final">
-        <h1>NAME MASTER SEARCH</h1>
-        <form>
-          
-          <div class="centrebox">
-        <table class="tab">
+      <h1>NAME MASTER SEARCH</h1>
+      <form>
+        
+        <div class="centrebox">
+      <table>
+        <td>
+<tbody>
+  
+        
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" /></td>
+</tr>
+<tr>        
+    <td>Gender:</td>
+      <td><select>
+        <option value="option1">Male</option>
+       <option value="option2">Female</option>
+       <option value="option3">Other</option>
+     </select>
+</tr>
+<tr>        
+<td>State of the Institution:</td>
+<td><select>
+<option value="option1">AP</option>
+<option value="option2">TS</option>
+<option value="option3">MP</option>
+     </select>
+ </tr>
+<tr>        
+ <td>Status Code:</td>
+ <td><select>
+<option value="option1">1</option>
+<option value="option2">2</option>
+<option value="option3">3</option>
+</select>
+</tr>
+<tr>
+<td>Institute No. from:</td>
+<td><input type="date">
+ To
+<input type="date"/>
+</tr>
+<tr>        
+<td>Category:</td>
+  <td><select>
+    <option value="option1">OC</option>
+   <option value="option2">BC</option>
+   <option value="option3">SC</option>
+ </select>
+</tr>
+<tr>
+        <td>Father Name:</td>
+        <td><input type="text" /></td>
+ </tr>
+ <tr>             
+    <td>Monitor code:</td>
+      <td><select>
+        <option value="option1">1</option>
+       <option value="option2">2</option>
+       <option value="option3">3</option>
+     </select>  
+ </tr>
+ <tr>
+    <td>Service Start From:</td>
+    <td><input type="date">
+      To 
+    <input type="date"/>
+</tr>
+</tbody>
+          <!---<div class="msg"
+          <tr>
+              <center>
+              <td>Message:</td>
+                      <td><input type="msgs" value="Press enter key after entering the values to validate"/></td>
+                  <br><br><br>
+              </center>
+          </tr>
+      </div>-->
+      </td>
+      <td>
+           
+         <tbody>
+          <tr>
+            <td>DOB:</td>
+            <td><input type="date">
+              To 
+            <input type="date"/>
+        </tr>
+        <tr>             
+            <td>Nature of Work Code:</td>
+              <td><select>
+                <option value="option1">1</option>
+               <option value="option2">2</option>
+               <option value="option3">3</option>
+             </select>  
+         </tr>
+         <tr>             
+            <td>Qualification Code:</td>
+              <td><select>
+                <option value="option1">1</option>
+               <option value="option2">2</option>
+               <option value="option3">3</option>
+             </select>  
+         </tr>
+         <tr>             
+            <td>Designation code:</td>
+              <td><select>
+                <option value="option1">1</option>
+               <option value="option2">2</option>
+               <option value="option3">3</option>
+             </select>  
+         </tr>
+         <tr>             
+            <td>Operator code:</td>
+              <td><select>
+                <option value="option1">1</option>
+               <option value="option2">2</option>
+               <option value="option3">3</option>
+             </select>  
+         </tr>
+         <tr>             
+            <td>Status:</td>
+              <td><select>
+                <option value="option1">1</option>
+               <option value="option2">2</option>
+               <option value="option3">3</option>
+             </select>  
+         </tr>
+         <tr>             
+            <td>State of Birth:</td>
+              <td><select>
+                <option value="option1">AP</option>
+               <option value="option2">TS</option>
+               <option value="option3">MP</option>
+             </select>  
+         </tr>
             <tr>
-                <td>Name:</td>
+                <td>Photo Display:</td>
                 <td><input type="text" /></td>
             </tr>
-            <tr>        
-                <td>Gender:</td>
-                  <td><select>
-                    <option value="option1">Male</option>
-                   <option value="option2">Female</option>
-                   <option value="option3">Other</option>
-                 </select>
-            </tr>
-            <tr>        
-            <td>State of the Institution:</td>
-            <td><select>
-            <option value="option1">AP</option>
-           <option value="option2">TS</option>
-           <option value="option3">MP</option>
-                 </select>
-             </tr>
-            <tr>        
-             <td>Status Code:</td>
-             <td><select>
-            <option value="option1">1</option>
-           <option value="option2">2</option>
-           <option value="option3">3</option>
-            </select>
-            </tr>
-            <tr>
-            <td>Institute No. from:</td>
-            <td><input type="date">
-             To
-            <input type="date"/>
-            </tr>
-            <tr>        
-            <td>Category:</td>
-              <td><select>
-                <option value="option1">OC</option>
-               <option value="option2">BC</option>
-               <option value="option3">SC</option>
-             </select>
-            </tr>
-            <tr>
-                    <td>Father Name:</td>
-                    <td><input type="text" /></td>
-             </tr>
-             <tr>             
-                <td>Monitor code:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>
-                <td>Service Start From:</td>
-                <td><input type="date">
-                  To 
-                <input type="date"/>
-            </tr>
-            <!---<div class="msg"
-            <tr>
-                <center>
-                <td>Message:</td>
-                        <td><input type="msgs" value="Press enter key after entering the values to validate"/></td>
-                    <br><br><br>
-                </center>
-            </tr>
-        </div>-->
-             </table>
-             <table type="tab1">
-             
-            <tr>
-                <td>DOB:</td>
-                <td><input type="date">
-                  To 
-                <input type="date"/>
-            </tr>
-            <tr>             
-                <td>Nature of Work Code:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>             
-                <td>Qualification Code:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>             
-                <td>Designation code:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>             
-                <td>Operator code:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>             
-                <td>Status:</td>
-                  <td><select>
-                    <option value="option1">1</option>
-                   <option value="option2">2</option>
-                   <option value="option3">3</option>
-                 </select>  
-             </tr>
-             <tr>             
-                <td>State of Birth:</td>
-                  <td><select>
-                    <option value="option1">AP</option>
-                   <option value="option2">TS</option>
-                   <option value="option3">MP</option>
-                 </select>  
-             </tr>
-                <tr>
-                    <td>Photo Display:</td>
-                    <td><input type="text" /></td>
-                </tr>
-        </table> 
-      </div>  
-    
-    
-        </div>
-        <div class="radio">
-            <div class="msg"
-
+         </tbody>
+            </td>
+      </table> 
+    </div>  
+  
+  
+      </div>
+      <div class="radio">
+          <div class="msg"
+   </center>
+      <br>
                 <center>
                 Message:
                         <input type="msgs" value="Press enter key after entering the values to validate"/>
-                    <br><br><br>
                 </center>
             
         </div>
