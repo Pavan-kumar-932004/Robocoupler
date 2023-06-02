@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVU</title>
+    <title>OC</title>
     
 <style>
   *{
@@ -81,19 +81,21 @@ input{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left:40px;
 }
 .ok {
-  background-color: blue; /* Green */
+  background-color: #4CAF50; /* Green */
 }
 
 .delete {
-  background-color: blue; /* Red */
+  background-color: #f44336 /* Red */
 }
 .close {
-  background-color: blue; 
+  background-color: #2196F3; 
 }
 .button:hover {
   opacity: 0.8;
+  background-color:#333333;
 }
             
         </style>
@@ -102,11 +104,11 @@ input{
  .centrebox{
 
 border-style:groove;
-padding: 10px;
+padding: 15px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:530px;
 
 }
 .scrolling-text marquee {
@@ -267,32 +269,32 @@ width:auto;
         <center>
           <h1>OPEARTOR CREATION</h1>
           </center>
+          <form>
             <div class="centrebox">
                 <table>
-                    <tr>
-                        <td>Operator Creation:</td>
-                        <td><input type="text"  /></td>
-                    </tr>
+                    <tr>             
+                        <td>Operator Code:</td>
+                          <td><select>
+                            <option value="option1">1</option>
+                           <option value="option2">2</option>
+                           <option value="option3">3</option>
+                         </select>  
+                     </tr>
                     <tr>
                         <td>Monitoring Center:</td>
                         <td><input type="text"  /></td>
                     </tr>
-                    <tr>
+                    <tr>             
                         <td>Operator Class:</td>
-                        <td><input type="text" />
-                        </td>
-                    </tr>
+                          <td><select>
+                            <option value="option1">1</option>
+                           <option value="option2">2</option>
+                           <option value="option3">3</option>
+                         </select>  
+                     </tr>
                     <tr>
                         <td>Operator Name:</td>
                         <td><input type="text"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Password:</td>
-                        <td><input type="password"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password:</td>
-                        <td><input type="password"  /></td>
                     </tr>
                     <tr>
                         <td>Validity Start Date:</td>
@@ -302,15 +304,26 @@ width:auto;
                         <td>Validity End Date:</td>
                         <td><input type="date"  /></td>
                     </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password"  /></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password:</td>
+                        <td><input type="password"  /></td>
+                    </tr>
                 </table>
+            
             </div><br>
 
             Msg/err 
             <input type="text"><br><br>
-            <button  class="button ok" >NEW</button>
-            <button class="button delete">SAVE</button>
-            <button class="button close">CLOSE</button>
+            <button  class="button ok" >SAVE</button>
+            <button class="button delete" type="reset" >RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+        </form>
         </body>
+
         </center>
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>

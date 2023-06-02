@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVU</title>
+    <title>reset</title>
     
 <style>
   *{
@@ -81,19 +81,21 @@ input{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left:40px;
 }
 .ok {
-  background-color: blue; /* Green */
+  background-color: #4CAF50; /* Green */
 }
 
 .delete {
-  background-color: blue; /* Red */
+  background-color: #4CAF50; /* Red */
 }
 .close {
-  background-color: blue; 
+  background-color: #f44336;  
 }
 .button:hover {
   opacity: 0.8;
+  background-color:#333333;
 }
             
         </style>
@@ -106,7 +108,7 @@ padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:500px;
 
 }
 .scrolling-text marquee {
@@ -268,6 +270,7 @@ width:auto;
           <h1>RESET PASSWORD</h1>
           </center>
             <div class="centrebox">
+                <form>
                 <table>
                     <tr>
                         <td>Select operator code:</td>
@@ -304,8 +307,9 @@ width:auto;
             Message:
                      <input type="msgs" value="press enter key after entering the values to validate"/>
                 <br><br><br>
-            <button class="button delete">RESET PASSWORD</button>
-            <button class="button close">CLOSE</button>
+            <button class="button delete" type="reset">RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+        </form>
         </body>
         </center>
         <div class="scrolling-text">
