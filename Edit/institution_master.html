@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="institution_master.css">
+    </head>
+    <body>
+        <div class="heading">
+            <center>
+            <img src="C:\Users\pavan\Downloads\logo.png" width="70">
+           <img src="C:\Users\pavan\Downloads\img.jpg" width="290"  >
+            <img src="C:\Users\pavan\Downloads\msme.jpg" width="100">
+            
+        </center><br>
+        <nav class="w3-bar w3-black">
+          <center>
+              <div class="dropdown">
+                  <a href="#home" class="w3-button w3-bar-item">EDIT</a>
+                  <div class="dropdown-content">
+                      <a href="#about">Name Master</a><br>
+                      <a href="#services">Institution Master</a><br>
+                      <a href="#contact">Institution Links</a>
+                  </div>
+              </div>
+              <div class="dropdown">
+                <a href="#band" class="w3-button w3-bar-item">VIEW</a>
+                <div class="dropdown-content">
+                    <a href="#about">Yearly Dose Data</a><br>
+                    <a href="#services">LifeTime Dose Data </a><br>
+                    <a href="#contact">Institution Dose Data Statistics</a><br>
+                    <a href="#contact">Operator Information View</a>
+                </div>
+            </div>
+            <div class="dropdown">
+              <a href="#tour" class="w3-button w3-bar-item">SEARCH</a>
+              <div class="dropdown-content">
+                  <a href="#about">Institution Master Search</a><br>
+                  <a href="#services">Name Master Search</a><br>
+        
+              </div>
+              </div>
+              <div class="dropdown">
+                  <a href="#contact" class="w3-button w3-bar-item">OPERATOR INFO</a>
+                  <div class="dropdown-content">
+                      <a href="#about">Operator Creation</a><br>
+                      <a href="#services">Change Password</a><br>
+                      <a href="#services">Operator Validity Updation</a><br>
+                      <a href="#services">Operator Task Allotment</a><br>
+                      <a href="#services">Reset Password</a><br>
+        
+                  </div>
+                  </div>
+                  <div class="dropdown">
+                      <a href="#tour" class="w3-button w3-bar-item">PROCESS</a>
+                      <div class="dropdown-content">
+                          <a href="#about">Input File Handling</a><br>
+                          <a href="#services">Radiation Worker Info</a><br>
+                          <a href="#services">Data Export</a><br>
+                          <a href="#services">Dosedata Updation</a><br>
+                          <a href="#services">Dosedata Rollback</a><br>
+                          <a href="#services">Dosedata Correction</a><br>
+                          <a href="#services">Database Statistics</a><br>
+        
+        
+                      </div>
+                      </div>
+                      <div class="dropdown">
+                          
+                          
+                          <a href="#tour" class="w3-button w3-bar-item">REPORTS</a>
+                          <div class="dropdown-content">
+                              <a href="#about">Monthly Dose Report</a><br>
+                              <a href="#services">Annual Dose Report</a><br>
+                              <a href="#services">Annual BlockWise Report</a><br>
+                              <a href="#services">Name List Report</a><br>
+                              <a href="#services">Personnel Data Report</a><br>
+                              <a href="#services">Institute Address Report</a><br>
+                              <a href="#services">Status Report Of Radiation Works</a><br>
+                              <a href="#services">Dose Records Report</a><br>
+                              <a href="#services">Institution Status List Report</a><br>
+                              <a href="#services">Radiation Analysis 1</a><br>
+                              <a href="#services">Dose Analysis Report</a><br>
+                              <a href="#services">Radiation Analysis 2</a><br>
+                              <a href="#services">Graphical Analysis 1</a><br>
+                              <a href="#services">Graphical Analysis 2</a><br>
+                              <a href="#services">Institution Master Report</a><br>
+                              <a href="#services">Month Wise Report Limited columns</a><br>
+                              <a href="#services">Names Master Report</a><br>
+                              <a href="#services">Photo & Fingerprint Status Report</a><br>
+                              
+        
+                          </div>
+                          </div>
+                          <div class="dropdown">
+                              <a href="#tour" class="w3-button w3-bar-item">BIO REPORTS</a>
+                              <div class="dropdown-content">
+                                  <a href="#about">Fingerprint Reports</a><br>
+                                  <a href="#services">Photo Reports</a><br>
+          
+                              </div>
+                              </div>
+                              <div class="dropdown">
+                                  <a href="#tour" class="w3-button w3-bar-item">HELP</a>
+                                  <div class="dropdown-content">
+                                      <a href="#about">Photo & FP Display</a><br>
+                                      <a href="#services">Checklist Generation</a><br>
+                                      <a href="#services">Printer Installation</a><br>
+                                      <a href="#services">Input Data Format</a><br>
+                                      <a href="#services">FAQ(frequently asked questions)</a><br>
+                                      <a href="#services">SOP Database</a><br>
+        
+              
+                                  </div>
+                                  </div>
+            </center>
+            </nav>
+            
+            </div>
+        <h1><CENTER>INSTITUTION MASTER</CENTER></h1>
+    <form><center>
+        <div class="container">
+            <div class="child1">
+                <table id="left" cellpadding="7px" cellspacing="3px" align="right">
+                    <tr>
+                        <td>Category Code:</td>
+                        <td><select name="cat">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Institute number:</td>
+                        <td><input type="number" name="insnum"></td>
+                    </tr>
+                    <tr>
+                        <td>Monitoring Centre Code:</td>
+                        <td><input type="text" name="moncen"></td>
+                    </tr>
+                    <tr>
+                        <td>Institution Incharge:</td>
+                        <td><input type="text" name="insinch"></td>
+                    </tr>
+                    <tr>
+                        <td>Institution Name:</td>
+                        <td><input type="text" name="insname"></td>
+                    </tr>
+                    <tr>
+                        <td>Institution Address1:</td>
+                        <td><input type="address" name="insadd1"></td>
+                    </tr>
+                    <tr>
+                        <td>Institution Address2:</td>
+                        <td><input type="address" name="insadd2"></td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" name="city"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="child1">
+            <table id="right" cellpadding="7px" cellspacing="3px" align="left">
+                <tr>
+                    <td>Pincode:</td>
+                    <td><input type="number" name="pin"></td>
+                </tr>
+                <tr>
+                    <td>State Code:</td>
+                    <td><select name="stcode">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Telephone Number:</td>
+                    <td><input type="number" name="telno"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td><input type="number" name="mobno"></td>
+                </tr>
+                <tr>
+                    <td>Fax Number:</td>
+                    <td><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td>Institution Class Code:</td>
+                    <td><select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>ServiceCode:</td>
+                    <td><select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select></td>
+                </tr>
+            </table>
+            </div>
+        </div></center>
+           <center><div class="mid">
+                <table id="mid" cellpadding="5px" cellspacing="3px">
+                        <tr>
+                            <td>Nature Of Radiation:</td>
+                            <td><select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select></td></td>
+                        </tr>
+                        <tr>
+                            <td>Radioisotope Used:</td>
+                            <td><select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select></td></td>
+                        </tr>
+                        <tr>
+                            <td>Date Of Registration:</td>
+                            <td><input type="date"></td>
+                        </tr>
+                        <tr>
+                            <td>Operator Code:</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Updated:</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Msg/Error:</td>
+                            <td><input type="text"></td>
+                        </tr>
+                </table>
+            </div></center> 
+        <center> <div class="buttons">
+            <button type="submit">|<<</button>
+            <button type="submit"><</button>
+            <button type="submit">></button>
+            <button type="submit"> >>| </button>
+            <button type="submit">View</button>
+            <button type="submit">New</button>
+            <button type="submit">GetlnstNos</button>
+            <button type="submit">Save</button>
+            <button type="submit">Delete</button>
+            <button type="submit">Close</button>
+         </div></center>
+         <div class="scrolling-text">
+            <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
+          </div>
+    </form>
+    </body>
+</html>
