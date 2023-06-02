@@ -82,14 +82,14 @@ input{
   cursor: pointer;
 }
 .ok {
-  background-color: blue; /* Green */
+  background-color: #4CAF50; /* Green */
 }
 
 .delete {
-  background-color: blue; /* Red */
+  background-color: #f44336; /* Red */
 }
 .close {
-  background-color: blue; 
+  background-color: #2196F3; 
 }
 .button:hover {
   opacity: 0.8;
@@ -268,6 +268,7 @@ width:auto;
         <center>
           <h1>INSTITUTION MASTER SEARCH</h1>
           </center>
+          <form>
             <div class="centrebox">
                 <body>
                     <table>
@@ -280,13 +281,22 @@ width:auto;
                             <td><input type="text" name="operatorname"/></td>
                     </tr>
                     <tr>
-                        <td>service Type Code:</td>
-                        <td><input type="text"  name="password" /></td>
+                        <td>Service Type Code:</td>
+                        <td><select>
+                        <option value="option1">1</option>
+                        <option value="option2">2</option>
+                        <option value="option">3</option>
+                        </select>
+                        
                     </tr>
                     <tr>
                         <td>Category:</td>
-                        <td><input type="text" name="npassword" />
-                        </td>
+                        <td><select>
+                        <option value="option1">1</option>
+                        <option value="option2">2</option>
+                        <option value="option">3</option>
+                        </select>
+                        
                     </tr>
                     <tr>
                         <td>CInstitute No. from:</td>
@@ -343,9 +353,8 @@ width:auto;
             <input type="msgs" value="press enter key after entering all values"/>
             <br>
             <button  class="button ok" >SEARCH</button>
-            <button  class="button ok" >CLEAR</button>
-            <button class="button delete">RESET</button>
-            <button class="button close">CLOSE</button>
+            <button class="button delete" type="reset">RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close">CLOSE</button></a>
         </form>
         </body>
         </body>
@@ -353,6 +362,7 @@ width:auto;
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>
+        </form>
         
    </head>
 </html>

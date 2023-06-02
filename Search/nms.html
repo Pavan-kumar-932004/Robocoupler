@@ -60,15 +60,50 @@
         .radio{margin-left: 70px;text-align: center;padding-top: 10px;margin-right: auto;margin-top:280px;}
         /*input[type=msgs]{width: 25% ;border: inset;background-color: lightgray; margin-top: 200px;}*/
 
-        button[type=button_1]{background-color:blue;
-            color: white;border: outset;margin-right: 30px;border-radius: 50px;font-size: 20px; }
+        button[type=button_1]{
+          background-color:blue;
+          color: white;
+          border:none;
+          margin:5px;
+          border-radius: 5px;
+          font-size: 16px;
+          display:inline-block;
+          padding:10px 20px; 
+          cursor:pointer;
+        }
                 
+        button[type=button_2]{
+          background-color: blue;
+          color: white;
+          border:none;
+          margin:50px;
+          border-radius: 5px;
+          font-size: 16px;
+          display: inline-block;
+          padding:10px 20px;
+          cursor:pointer;
+        }
+                
+        button[type=button_3]{
+          background-color: blue;
+          color: white;
+          border: none;
+          margin:5px;
+          border-radius: 5px;
+          font-size: 16px;
+          display: inline-block;
+          padding:10px 20px;
+          cursor:pointer; 
+        }
+        .centrebox{
 
-        button[type=button_2]{background-color: blue ;color: white;border: outset;margin-right: 30px;border-radius: 50px;font-size: 20px; }
-                
-        button[type=button_3]{background-color: blue  ;color: white;border: outset;margin-right: 30px;border-radius: 50px;font-size: 20px; }
-                
-        button[type=button_4]{background-color: blue;color: white;border: outset;margin-right: 30px;border-radius: 50px;font-size: 20px; }
+border-style:groove;
+padding: 10px;
+background: #6C9BCF;
+border: solid 1px black;
+border-radius: 3px;
+width:650px;
+}
          .msg{
             font-size:20px;
             margin-right:100px;}
@@ -232,6 +267,9 @@ width:auto;
     
     <div class="final">
         <h1>NAME MASTER SEARCH</h1>
+        <form>
+          
+          <div class="centrebox">
         <table class="tab">
             <tr>
                 <td>Name:</td>
@@ -303,7 +341,7 @@ width:auto;
             </tr>
         </div>-->
              </table>
-             <table class="tab1">
+             <table type="tab1">
              
             <tr>
                 <td>DOB:</td>
@@ -363,7 +401,9 @@ width:auto;
                     <td>Photo Display:</td>
                     <td><input type="text" /></td>
                 </tr>
-        </table>      
+        </table> 
+      </div>  
+    
     
         </div>
         <div class="radio">
@@ -377,14 +417,14 @@ width:auto;
             
         </div>
             <br>
-            <button type="button_1" onclick="alert('error')">SEARCH</button>
-
-            <button type="button_2" onclick="alert('error')">CLEAR</button>
-            <button type="button_3" onclick="alert('error')">RESET</button>
-            <button type="button_4" onclick="alert('error')">CLOSE</button>
+            <button type="button_1">SEARCH</button>
+            <button type="button_2" >RESET</button>
+            <button type="button_3" >CLOSE</button>
         </div>
+      </form>
         <div class="scrolling-text">
           <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
         </div>
+
  </body>
 </html>
