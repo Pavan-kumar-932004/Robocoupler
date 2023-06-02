@@ -293,7 +293,7 @@
             </center>
         </div>
         <div class="buttons">
-            
+            <center>
             <button type="submit">Save</button>
             <button type="reset">Reset</button>
             <button type="submit">Edit</button></center>
