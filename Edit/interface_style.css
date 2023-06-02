@@ -31,18 +31,16 @@ button{
  font-size: larger;
   margin:5px;
   padding:10px;
-  box-shadow:2px 2px 2px;
   background:#FFF4E0;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   
 }
-button:hover{
+/*button:hover{
     transition: 0.2s ease-in;
     transform: translateY(5px);
     background-color: #5ff064c3;
-}
+}*/
 body{
     background:#97DEF9;
 }
