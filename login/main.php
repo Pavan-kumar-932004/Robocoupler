@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["auth"]))
+{
+  $_SESSION['status'] = "you are already logged in";
+  header('../Main_page/Main_page_code.html');
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -329,14 +337,21 @@
                 $password = $_POST['password'];
         
                 $sql = "select * from login where username = '$username' and password = '$password'";  
-                $result = mysqli_query($con, $sql);  
-                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-                $count = mysqli_num_rows($result);  
-                
-                if($count == 1){  
+                $result = mysqli_query($con, $sql);   
 
-                    session_start();
-                    $_SESSION["loggedIn"] = true;
+                if(mysqli_num_rows($result) > 0){  
+
+                  foreach($result as $row){
+                    $username=$row['username'];
+                    $password=$row['password'];
+                  }
+                    
+                    $_SESSION["auth"] = true;
+                    $_SESSION['auth_user']=[
+                      'username'=>$username,
+                      'password'=>$password
+                    ];
+                    $_SESSION['status']="logged in successfully";
                     echo  '<script>
                                 window.location = "../Main_page/Main_page_code.html";
                            </script>';
