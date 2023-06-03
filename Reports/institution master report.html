@@ -54,7 +54,7 @@
             </style>
         
         <style>
-     div{
+     .main_table{
 
     border-style:groove;
     padding: 10px;
@@ -86,7 +86,7 @@
   .heading{
     background-color: white;
         width: 100vw;
-        height: 150px;
+        height: 180px;
         margin-left: calc(50% - 50vw); 
         margin-right: calc(50% - 50vw);
         margin: 0;
@@ -207,9 +207,9 @@ width:auto;
         <body>
           <div class="heading">
             <center>
-            <img src="logo.png" width="70">
-            <img src="img.jpg" width="290"  >
-            <img src="msme.jpg" width="100">
+            <img src="../images/logo.png" width="70">
+            <img src="../images/img.jpg" width="290"  >
+            <img src="../images/msme.jpg" width="100">
             
         </center><br>
         <nav class="w3-bar w3-black">
@@ -320,7 +320,8 @@ width:auto;
             
                                 </div>
     
-            <div>
+            <div class="main_table">
+                <form method="get">
                 <table>
                     <tr>
                         <td>Institution name:</td>
@@ -355,7 +356,7 @@ width:auto;
                         <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
                             <input type="date" id="dob" name="dob"></td></td>
                         <tr>
-                            <td >Insti type code</td>
+                            <td >Institution type code</td>
                         <td><select>
                             <option>  </option>
                             <option>  </option>
@@ -380,7 +381,7 @@ width:auto;
                             <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
                                 <input type="date" id="dob" name="dob"></td></td>
                         <tr>
-                        <td>Operator code</td>
+                        <td>Operator Code</td>
                         <td><input type="text" /></td><br>
                     </tr>
                     <tr>
@@ -388,12 +389,12 @@ width:auto;
                         <td><input type="text" /></td>
                     </tr>
                 </table>
-               
+            </form>
                 
             </div>
             <button  class="button ok" >GENERATE</button>
-            <button class="button delete">RESET</button>
-            <button class="button close">Close</button>
+            <button class="button delete" type="reset">RESET</button>
+            <button class="button close">CLOSE</button>
         </body>
         </center>
         <div class="scrolling-text">
