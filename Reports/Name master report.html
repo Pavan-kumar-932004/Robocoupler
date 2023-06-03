@@ -8,18 +8,6 @@
         color: #0C134F;
         text-align: center;
     }
-    table {
-      border-collapse: collapse; 
-    }
-    td{
-        background-color:#6C9BCF;
-        padding: 7px;
-        font-size:20px;
-    }
-    th {
-      text-align: center;
-      font-size: 20px;
-    }
     .textbox {
       width: 400px;
       padding: 1px;
@@ -86,22 +74,6 @@
     }
     label {
       font-weight: bold;
-    }
-    
-    input[type="date"] {
-      padding: 8px;
-      border-radius: 3px;
-      border: 1px solid black;
-      background-color: #FFF4E0;
-    }
-    
-    input[type="submit"] {
-      padding: 10px 20px;
-      border-radius: 5px;
-      background-color:#FFF4E0 ;
-      
-      border: 1px;
-      cursor: pointer;
     }
     .scrolling-text {
   padding: 5px;
@@ -359,6 +331,9 @@ width:auto;
       
         <h1><marquee></marquee><center>NAMES MASTER REPORT</center></marquee></h1>
         
+<form>
+  <center>
+    <div class="centrebox">
       <table align="center">
         <tr>
           <td>Name:</td>
@@ -441,12 +416,18 @@ width:auto;
             <td><input type="text" name="msg" class="sai" /></td>
         </tr>
         </table>
+        
+        </div>
         <div class="center">
-            <button  class="button ok" >Generate</button>
-            <button class="button delete" type="reset">Reset</button>
-            <button class="button view"> Close</button>
+          <button class="button ok" type="submit"> Generate</button>
+          <button class="button delete" type="reset">Reset</button>
+          <a href="../Main_page/Main_page_code.html"><button  class="button view" type="button" >Back</button></a>
             
             </div>
+    
+    <br><br>
+  </center>
+</form>
             <div class="scrolling-text">
                 <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
               </div>
