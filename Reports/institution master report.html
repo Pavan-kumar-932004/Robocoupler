@@ -165,6 +165,9 @@ border-radius: 3px;
 width:650px;
 
 }
+td{
+    font-size: 20px;
+}
 .scrolling-text marquee {
 font-weight: bold;
 width: 100%;
@@ -199,6 +202,10 @@ width:auto;
             align-items: center;
             justify-content: space-between;
             margin:2px 0;
+        }
+        #id{
+            padding:2px;
+            margin:4px;
         }
         .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
@@ -322,23 +329,26 @@ width:auto;
                 <table>
                     <tr>
                         <td>Institution name:</td>
-                        <td><input type="text"  /></td>
-                        <tr><td >Category</td> 
+                        <td><input type="text"></td>
+                    </tr>
+                        <tr>
+                            <td >Category</td> 
                             <td><select>
                                 <option>oc</option>
                                 <option>bc</option>
-                                <option>sc/st</option></select></td></tr>
+                                <option>sc/st</option></select></td>
+                        </tr>
                         <tr>
                             <td >Pin code:</td>
-                        <td><input type="text"  /></td>
+                            <td><input type="text"></td>
                         </tr>
-                    </tr>
                     <tr>    
                         <td >State code</td>
                         <td><select>
-                            <option>  </option>
-                            <option>  </option>
-                            <option>  </option></select></td>
+                            <option>  1</option>
+                            <option>  2</option>
+                            <option>  3</option></select></td>
+                    </tr>
                        <tr>
                         <td >City</td>
                         <td><input type="text" /></td>
@@ -347,23 +357,26 @@ width:auto;
                             <td >Monitoring center</td>
                         <td><input type="text" /></td>
                         </tr>
-                    </tr>
                     <tr>
-                        <td >Institute No from</td>
-                        <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
-                            <input type="date" id="dob" name="dob"></td></td>
+                        <td >Institute Number from</td>
+                        <td><input type="date"></td><td id="to">To</td>
+                        <td><input type="date"></td>
+                    </tr>
                         <tr>
                             <td >Institution type code</td>
-                        <td><select>
-                            <option>  </option>
-                            <option>  </option>
-                            <option>  </option></select></td>
+                            <td><input type="date"></td><td id="to">To</td><td><input type="date"></td>
                         </tr>
-                    </tr>
+                        <tr>
+                            <td> </td>
+                        <td><select>
+                            <option>  1</option>
+                            <option>  2</option>
+                            <option>  3</option></select></td>
+                        </tr>
                     <tr>
                         <td >Service start date from</td>
-                        <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
-                            <input type="date" id="dob" name="dob"></td></td>
+                        <td><input type="date"></td><td id="to">To</td><td><input type="date"></td>
+                        
                     <tr>
                         <td >Service type code</td>
                         <td><select>
@@ -375,8 +388,7 @@ width:auto;
                     <tr>
                         <tr>
                            <td >Last placed date from</td>
-                            <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
-                                <input type="date" id="dob" name="dob"></td></td>
+                           <td><input type="date"></td><td id="to">To</td><td><input type="date"></td>
                         <tr>
                         <td>Operator Code</td>
                         <td><input type="text" /></td><br>
@@ -386,16 +398,20 @@ width:auto;
                         <td><input type="text" /></td>
                     </tr>
                 </table>
-            </form>
-                
             </div>
+            <div class="buttons">
             <button  class="button ok" >GENERATE</button>
             <button class="button delete" type="reset">RESET</button>
-            <button class="button close">CLOSE</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+            </div><br><br>
+            </form>
+                
+            
+            <div class="scrolling-text">
+                <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
+              </div>
         </body>
         </center>
-        <div class="scrolling-text">
-            <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
-          </div>
+
     </head>
 </html>
