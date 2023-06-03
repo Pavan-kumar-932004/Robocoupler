@@ -26,21 +26,7 @@
     font-family:Calibri;
     border-radius:3px;
 }
-button{
- font-family:Calibri;
- font-size: larger;
-  margin:5px;
-  padding:10px;
-  background:#FFF4E0;
-  border: none;
-  cursor: pointer;
-  
-}
-/*button:hover{
-    transition: 0.2s ease-in;
-    transform: translateY(5px);
-    background-color: #5ff064c3;
-}*/
+
 body{
     background:#97DEF9;
 }
@@ -208,12 +194,21 @@ width:auto;
   }
   .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
-#save{
+button#save{
 background-color: #4CAF50; 
 }
-#edit{
+button#edit{
 background-color: #f44336;
 }
-#reset{
+button#reset{
     background-color: #2196F3; 
+}
+button{
+    font-family:Calibri;
+    font-size: 20px;
+    margin:3px;
+    padding:3px;
+    border-radius:5%;
+    
+    background:#FFF4E0;
 }
