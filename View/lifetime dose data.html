@@ -119,27 +119,29 @@ background-color:#FFF4E0;
 text-emphasis-color: black;
 }
 .button {
-display: inline-block;
-padding: 10px 20px;
-margin: 5px;
-color: white;
-font-size: 16px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 40px;
 }
 .ok {
-background-color: blue; /* Green */
+  background-color: #4CAF50; /* Green */
 }
 
 .delete {
-background-color: blue; /* Red */
+  background-color: #4CAF50; /* Red */
 }
 .close {
-background-color: blue; 
+  background-color: #f44336  
 }
 .button:hover {
-opacity: 0.8;
+  opacity: 0.8;
+  background-color:#333333;
 }
       
 .centrebox{
@@ -312,8 +314,9 @@ width:auto;
          </tr>
         </table></center>
          <div class="buttons">
-            <center><button type="submit">View</button>
-            <button type="submit">close</button>
+            <center>
+                <button class="button delete" >VIEW</button>
+                <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
             </center>
          </div>
          <div class="scrolling-text">
