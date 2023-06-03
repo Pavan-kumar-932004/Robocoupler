@@ -297,7 +297,7 @@
             <center>
             <button type="submit">Save</button>
             <button type="reset">Reset</button>
-            <button type="submit">Edit</button></center>
+            <button type="button" name="edit_button">Edit</button></center>
         </div>
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
@@ -309,6 +309,17 @@
     }
 </script> 
 <?php
+if (isset($_POST['edit_button'])) {
+    
+    $ename = $_POST['ename'];
+
+    
+    checkname($ename);
+}
+function checkname($ename) {
+    
+    echo "Edit button clicked for employee number: $ename";
+}
 if(isset($_POST["insname"])&&isset($_POST["pname"])&&isset($_POST["ename"])&&isset($_POST["title"])&&isset($_POST["rwname"])&&isset($_POST["sex"])
 &&isset($_POST["dob"])&&isset($_POST["sob"])&&isset($_POST["scode"])&&isset($_POST["qcode"])&&isset($_POST["nwork"])&&isset($_POST["nwork2"])
 &&isset($_POST["nwork3"])&&isset($_POST["tno"])&&isset($_POST["mno"])&&isset($_POST["crw"])&&isset($_POST["aadhar"])&&isset($_POST["tid"])
