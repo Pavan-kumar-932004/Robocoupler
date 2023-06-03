@@ -93,11 +93,9 @@ input{
 border-style:groove;
 padding: 10px;
 background: #6C9BCF;
-
-
-width:650px;
-border-color: black;
-
+border: solid 1px black;
+border-radius: 3px;
+width:510px;
 
 }
 .scrolling-text marquee {
@@ -127,7 +125,7 @@ width:auto;
     }
     
     .close {
-      background-color: #FFC107; 
+      background-color: #2196F3; 
     }
     .button:hover {
       opacity: 0.8;
@@ -272,8 +270,9 @@ width:auto;
             
                                 </div>
     
-            <h1>Graphical Analysis 1</h1>
-        <div class="centered">
+            <h1>GRAPHICAL ANALYSIS 1</h1>
+            <center><form>
+        <div class="centrebox">
             <table>
                 <tr>
                     <td><label for="dob">Year</label>
@@ -312,16 +311,17 @@ width:auto;
                 </tr>
                
                 </table>
-        </div> <br>
+        </div>
+    </center> <br>
         <center>
             <div class="but">
                 <button  class="button ok" >GENERATE</button>
-                <button class="button delete">RESET</button>
-                <button class="button close">Close</button>
+                <button class="button delete" type="reset">RESET</button>
+                <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
             </div>
                     
           </center>
-                
+        </form> 
             </div>
             
         </div>
