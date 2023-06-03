@@ -304,9 +304,28 @@
           </div>
 </form>
 <script>
+    
+    if (!loggedIn()) {
+    window.location.href = "../login/main.php";
+    }
+    
+
     function updateSecondField(value) {
       document.getElementById("isname").value = value;
     }
+    function loggedIn() {
+  <?php
+  // Start the session
+  session_start();
+
+  // Check if the session variable exists and is set to true
+  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true) {
+    return true;
+  } else {
+    return false;
+  }
+  ?>
+    }   
 </script> 
 <?php
 if (isset($_POST['edit_button'])) {
