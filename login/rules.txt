@@ -1,0 +1,7 @@
+subtitles-------12px ----first letter should be capital
+bg--------------#97DEF9(light blue)
+Box colours------#6C9BCF(kochem takkuva light blue)
+           ------#F5F0BB(skin color)
+Textbox------#FFF4E0(light skin color)
+Font---------Calibri
+All titles in <h1>
