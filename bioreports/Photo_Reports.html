@@ -368,52 +368,54 @@ width:530px;
         <h1><center>PHOTO REPORTS</center></h1>
         
       <center>
-        <div class="centrebox">
-          <table align="center">
-        
+<form>
+  <div class="centrebox">
+    <table align="center">
+  
+      <tr>
+        <tr>
+            <td>Institute No:</td>
+            <td><select name="insno" class="sai">
+              <option value="1">Category 1</option>
+              <option value="2">Category 2</option>
+              <option value="3">Category 3</option>
+            </select></td>
+            
+        </tr>
+        <tr>
+          <tr>
+              <td>Available In:</td>
+              <td><input type="month" name="year" value="2023" class="sai" min="1900" max="2023"></td>
+          </tr>
+        <tr>
+          <tr>
             <tr>
-              <tr>
-                  <td>Institute No:</td>
-                  <td><select name="insno" class="sai">
-                    <option value="1">Category 1</option>
-                    <option value="2">Category 2</option>
-                    <option value="3">Category 3</option>
-                  </select></td>
-                  
-              </tr>
-              <tr>
-                <tr>
-                    <td>Available In:</td>
-                    <td><input type="month" name="year" value="2023" class="sai" min="1900" max="2023"></td>
-                </tr>
-              <tr>
-                <tr>
-                  <tr>
-                      <td>To Be Captured In:</td>
-                      <td><input type="month" name="year1" value="2023"  class ="sai"vmin="1900" max="2023" ></td>
-                  </tr>
-              
-             
-                  <tr>
-                    <td>Captured In The Period From Date: </td>
-                           
-                    <td><label for="dob"></label>
-                        <input type="date" id="dob" name="dob1"> To Date: <label for="dob"></label>
-                        <input type="date" id="dob" name="dob2">
-                    </td>
-                </tr>
-                
-              </table>
-        </div>
-      </center>
-        <div class="center">
-            
-            
-          <button class="button ok" type="submit"> Generate Report</button>
-          <button class="button delete" type="reset">Reset</button>
-          <a href="../Main_page/Main_page_code.html"><button  class="button view" type="button" >Back</button></a>
-            
-            </div>
+                <td>To Be Captured In:</td>
+                <td><input type="month" name="year1" value="2023"  class ="sai"vmin="1900" max="2023" ></td>
+            </tr>
+        
+       
+            <tr>
+              <td>Captured In The Period From Date: </td>
+                     
+              <td><label for="dob"></label>
+                  <input type="date" id="dob" name="dob1"> To Date: <label for="dob"></label>
+                  <input type="date" id="dob" name="dob2">
+              </td>
+          </tr>
+          
+        </table>
+  </div>
+</center>
+  <div class="center">
+      
+      
+    <button class="button ok" type="submit"> Generate Report</button>
+    <button class="button delete" type="reset">Reset</button>
+    <a href="../Main_page/Main_page_code.html"><button  class="button view" type="button" >Back</button></a>
+      
+      </div>
+</form>
             <div class="scrolling-text">
                 <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
               </div>
