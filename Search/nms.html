@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMS</title>
+    <title>NMS</title>
     <style>
-        *{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+        *{font-family: Calibri, Arial, sans-serif}
         html{background-color: #97DEF9;}
         .heading{
     background-color: white;
@@ -54,64 +54,41 @@
         .final{color: black; font-size: 20px; margin-top:140px;}
         input[type=mc]{width: 125%;border: inset;background-color: lightgray;}
         input[type=yer]{width: 50%;}
-        
-        /*input[type=msgs]{width: 25% ;border: inset;background-color: lightgray; margin-top: 200px;}*/
+        .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+.ok {
+  background-color: #4CAF50; /* Green */
+}
 
-        button[type=button_1]:hover{
-          opacity: 0.8;
-      background-color:#333333;
-        }
-        button[type=button_2]:hover{
-          opacity: 0.8;
-      background-color:#333333;
-        }
-        button[type=button_3]:hover{
-          opacity: 0.8;
-      background-color:#333333;
-        }
-        button[type=button_1]{
-          background-color:#4CAF50;
-          color: white;
-          border:none;
-          margin:5px;
-          border-radius: 5px;
-          font-size: 16px;
-          display:inline-block;
-          padding:10px 20px; 
-          cursor:pointer;
-        }
-                
-        button[type=button_2]{
-          background-color: #f44336;
-          color: white;
-          border:none;
-          margin:50px;
-          border-radius: 5px;
-          font-size: 16px;
-          display: inline-block;
-          padding:10px 20px;
-          cursor:pointer;
-        }
-                
-        button[type=button_3]{
-          background-color: #2196F3;
-          color: white;
-          border: none;
-          margin:5px;
-          border-radius: 5px;
-          font-size: 16px;
-          display: inline-block;
-          padding:10px 20px;
-          cursor:pointer; 
-        }
-        .centrebox{
+.delete {
+  background-color: #f44336 /* Red */
+}
+.close {
+  background-color: #2196F3;  
+}
+.button:hover {
+  opacity: 0.8;
+  background-color:#333333;
+}
 
+
+ .centrebox{
 border-style:groove;
 padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:550px;
+
 }
          .msg{
             font-size:20px;
@@ -119,6 +96,7 @@ width:650px;
             .dropdown {
             position: relative;
             display: inline-block;
+            
         }
 
 .dropdown-content {
@@ -154,10 +132,7 @@ left: 0;
 right: 0;
 width:auto;
 }
-.button:hover {
-      opacity: 0.8;
-      background-color:#333333;
-    }
+
             
          
     </style>
@@ -425,25 +400,18 @@ width:auto;
          </tbody>
             </td>
       </table> 
-    </div>  
-  
-  
-      </div>
-      <div class="radio">
-          <div class="msg"
-   </center>
-      <br>
+    </div>  <br>
                 <center>
-                Message:
-                        <input type="msgs" value="Press enter key after entering the values to validate"/>
+                Msg/Err:
+                        <input type="msgs"/>
                 </center>
             
-        </div>
+        
             <br>
-            <button type="button_1">SEARCH</button>
-            <button type="button_2" type="reset" >RESET</button>
-            <a href="../Main_page/Main_page_code.html"><button type="button_3" type="button" >CLOSE</button></a>
-        </div>
+            <button  class="button ok" >SAVE</button>
+            <button class="button delete" type="reset">RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+      </div><br><br>
       </form>
         <div class="scrolling-text">
           <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
