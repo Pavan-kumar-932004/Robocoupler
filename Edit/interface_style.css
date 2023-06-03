@@ -208,3 +208,12 @@ width:auto;
   }
   .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
+#save{
+background-color: #4CAF50; 
+}
+#edit{
+background-color: #f44336;
+}
+#reset{
+    background-color: #2196F3; 
+}

@@ -19,8 +19,7 @@ button{
     font-family:Calibri;
     font-size: larger;
      margin:5px;
-     padding:5px;
-     box-shadow:2px 2px 2px;
+     padding:4px;
      background:#FFF4E0;
 }
 /*button:hover{
