@@ -34,8 +34,7 @@ button{
     font-size: larger;
      margin:3px;
      padding:3px;
-     box-shadow:2px 2px 2px;
-     background:#FFF4E0
+    
 }
 /*button:hover{
     transition: 0.2s ease-in;
@@ -211,3 +210,20 @@ width:auto;
   
   .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
+button#getinst{
+    background-color: #4CAF50; 
+    }
+    button#save{
+    background-color: #f44336;
+    }
+    button#edit{
+        background-color: #2196F3; 
+    }
+    button{
+        font-family:Calibri;
+        font-size: 20px;
+        margin:3px;
+        padding:3px;
+        
+        background:#FFF4E0;
+    }

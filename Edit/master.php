@@ -293,7 +293,7 @@
             <center>
             <button type="submit" id="save">Save</button>
             <button type="reset" id="reset">Reset</button>
-            <a href="../Main_page/Main_page_code.html"> <button type="button" name="edit_button" id="edit">Edit</button></center></a>
+             <button type="button" name="edit_button" id="edit">Edit</button></center>
         </div>
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
