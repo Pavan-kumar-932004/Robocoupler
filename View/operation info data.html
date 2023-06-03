@@ -190,20 +190,35 @@ width:auto;
   .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
 
-.buttons{
- padding:10px;
-}
-button{
-  font-family:Calibri;
-    font-size: larger;
-     margin:2px;
-     padding:2px;
-     border-radius:25%;
-     box-shadow:2px 2px 2px;
-     background:  #FFF4E0;
-     margin-right: 6px;
-     margin-left:4px;
-}
+
+.ok {
+      background-color: #4CAF50; /* Green */
+    }
+    
+    .delete {
+      background-color: #f44336; /* Red */
+    }
+    
+    .view {
+      background-color: #2196F3; 
+    }
+    .close {
+      background-color: #FFC107; 
+    }
+    .button:hover {
+      opacity: 0.8;
+      background-color:#333333;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
 </style>
 </head>
@@ -342,9 +357,11 @@ button{
 </div>
   </form>
 </div></center>
-<div class="buttons">
-<center><button>View</button>
-    <button>close</button></center>
+<div>
+<center>
+  <button  class="button ok" >VIEW</button>
+  <a href="../Main_page/Main_page_code.html"><button class="button view" type="button">CLOSE</button></a>
+  </center>
   </div>
   <div class="scrolling-text">
     <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>

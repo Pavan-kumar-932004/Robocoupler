@@ -4,14 +4,34 @@
 .buttons{
     margin-top:25px;
 }
-button{
-    font-family:Calibri;
-    font-size: larger;
-     margin:5px;
-     padding:5px;
-     box-shadow:2px 2px 2px;
-     background:  #FFF4E0;
-}
+.ok {
+      background-color: #4CAF50; /* Green */
+    }
+    
+    .delete {
+      background-color: #f44336; /* Red */
+    }
+    
+    .view {
+      background-color: #2196F3; 
+    }
+    .close {
+      background-color: #FFC107; 
+    }
+    .button:hover {
+      opacity: 0.8;
+      background-color:#333333;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 /*button:hover{
     transition: 0.2s ease-in;
     transform: translateY(5px);
@@ -19,6 +39,7 @@ button{
 }*/
 body{
     background:#97DEF9;
+    font-family: Calibri, Arial, sans-serif;
 }
 input,select{
     border:1px solid black;
@@ -124,18 +145,23 @@ border-radius: 5px;
 cursor: pointer;
 }
 .ok {
-background-color: blue; /* Green */
-}
-
-.delete {
-background-color: blue; /* Red */
-}
-.close {
-background-color: blue; 
-}
-.button:hover {
-opacity: 0.8;
-}
+      background-color: #4CAF50; /* Green */
+    }
+    
+    .delete {
+      background-color: #f44336; /* Red */
+    }
+    
+    .view {
+      background-color: #2196F3; 
+    }
+    .close {
+      background-color: #2196F3; 
+    }
+    .button:hover {
+      opacity: 0.8;
+      background-color:#333333;
+    }
 
 .centrebox{
 
@@ -315,11 +341,12 @@ width:auto;
             </select></td>
          </tr>
         </table></center>
-         <div class="buttons">
+         <div style="margin-left: 60px;">
+            <br>
             <center>
-            <button type="submit">View</button>
-            <button type="submit">close</button>
-            <button type="submit">Get linked data</button></center>
+                <button  class="button ok" >VIEW</button>
+                <button class="button delete" type="reset">GET LINKED DATA</button>
+                <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
          </div>
          <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
