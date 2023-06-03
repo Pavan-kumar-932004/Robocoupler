@@ -24,7 +24,6 @@
     .textbox {
       width: 400px;
       padding: 1px;
-      
       background-color:#FFF4E0;
       text-emphasis-color: black;
     }
@@ -38,7 +37,6 @@
       display: inline-block;
       padding: 10px 20px;
       background-color: #9BA4B5;
-    
       font-size: 16px;
       border-radius:5px;
       cursor: pointer;
@@ -51,9 +49,8 @@
   border-radius: 10px;
 }
     .sai{
-        width: 300px;
+      width: 300px;
       padding: 1px;
-      
       background-color:#FFF4E0;
       color: #333333;
       font-size: 16px;
@@ -145,7 +142,7 @@
 
 .scrolling-text marquee {
   font-weight: bold;
-  width: 100%;
+  width:100%;
   
 }
 *{
@@ -198,7 +195,7 @@
     color: #0C134F;
     font-size:xx-large;
     text-align: center;
-    margin-top:190px;
+    margin-top:140px;
 }
 body{
     background-color: #97DEF9;
@@ -259,15 +256,18 @@ width:650px;
         }
         .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
+.ram{
+  margin-bottom:20px;
+}
 
   </style>
 </head>
 <body>
   <div class="heading">
     <center>
-    <img src="logo.png" width="70">
-    <img src="img.jpg" width="290"  >
-    <img src="msme.jpg" width="100">
+      <a href="../Main_page/Main_page_code.html"><img src="../images/logo.png" width="70"></a>
+      <a href="../Main_page/Main_page_code.html"><img src="../images/img.jpg" width="290"></a>
+      <img src="../images/msme.jpg" width="100">
     
 </center><br>
 <nav class="w3-bar w3-black">
@@ -377,8 +377,9 @@ width:650px;
                                  </nav>
     
                         </div>
-
-    <h1><marquee></marquee><center>INPUT FILE HANDLING</center></marquee></h1>
+<br>
+    <h1><center>INPUT FILE HANDLING</center></h1>
+    <form>
   <table align="center">
       
     <tbody>
@@ -400,16 +401,17 @@ width:650px;
         <td></td>
       </tr>
     </tbody>
-  </table>
-  <h2 align="center">Operator code:  <input name="oprco" type="text" class="teja"></h2>
+  </table><br>
+  <center><b>Operator code:  <input name="oprco" type="text" class="teja"></b></center><br>
   <div class="center">
   <button  class="button ok" >OK</button>
-  <button class="button delete">Delete</button>
-  <button class="button view">View</button>
-  <button class="button close">Close</button>
+  <button class="button delete" type="reset">RESET</button>
+  <button class="button view">VIEW</button>
+  <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
   </div>
-  <h2 align="center"> Msg/Err: <input name="msg" align="center" type="text" class="msg"></h3>
-  <h2 align="center" > Results:</h2>
+</form><br>
+  <center><b>Msg/Err: <input name="msg" align="center" type="text" class="msg"> <br>
+   Results:</b></center>
   <div class="ram">
   <table align="center">
     <tr>
@@ -433,6 +435,8 @@ width:650px;
         <td><input name="datrefoupl"vtype="email"class="sai" /></td>
     </tr>
     </table>
+    </div>
+    <br>
     <div class="scrolling-text">
       <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
     </div>
