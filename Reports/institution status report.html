@@ -6,6 +6,9 @@
     <head>
         <center>
             <style>
+                td{
+                    padding:3px;
+                }
                 h1{
         font-style:initial;
         color: #0C134F;
@@ -33,15 +36,15 @@
     }
     
     .delete {
-      background-color: #f44336; /* Red */
+      background-color: #ff3007; /* Red */
     }
     
     .view {
-      background-color: #2196F3; 
+      background-color: 
     }
     
     .close {
-      background-color: #FFC107; 
+      background-color:  #2196F3; 
     }
     .button:hover {
       opacity: 0.8;
@@ -54,13 +57,13 @@
             </style>
         
         <style>
-     div{
+     .main_table{
     border-style:groove;
     padding: 10px;
     background: #6C9BCF;
     border: solid 1px black;
     border-radius: 3px;
-   width:500px;
+   width:520px;
   }
   .scrolling-text marquee {
     font-weight: bold;
@@ -84,7 +87,7 @@
   .heading{
     background-color: white;
         width: 100vw;
-        height: 150px;
+        height: 170px;
         margin-left: calc(50% - 50vw); 
         margin-right: calc(50% - 50vw);
         margin: 0;
@@ -205,9 +208,9 @@ width:auto;
         <body>
           <div class="heading">
             <center>
-            <img src="logo.png" width="70">
-            <img src="img.jpg" width="290"  >
-            <img src="msme.jpg" width="100">
+            <img src="../images/logo.png" width="70">
+            <img src="../images/img.jpg" width="290"  >
+            <img src="../images/msme.jpg" width="100">
             
         </center><br>
         <nav class="w3-bar w3-black">
@@ -318,42 +321,43 @@ width:auto;
             
                                 </div>
     
-            <div>
+            <div class="main_table">
+                <form method="get">
                 <table>
                     <tr>
                         <td >Status:</td>
-                        <td><input type="text"  /></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <td>Institution category:</td>
                         <td><select>
-                            <option>  </option>
-                            <option>  </option>
-                            <option>  </option></select></td>
+                            <option> 1</option>
+                            <option> 2</option>
+                            <option> 3</option></select></td>
                     </tr>
                     <tr>
-                        <td>Monitoring center</td>
-                        <td><input type="text" /></td>
+                        <td>Monitoring center&emsp;</td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <td>Institution no: from </td>
-                        <td><input type="date" /></td>
+                        <td><input type="date"></td>
                         <td>To </td>
-                        <td><input type="date" /></td>
+                        <td><input type="date"></td>
                     </tr>
                     <tr>
                         <td>Msg/err</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text"></td>
                     </tr>
                 </table>
                 
-                
+            </form>
                 
             </div>
         </div>
         <button  class="button ok" >GENERATE</button>
-        <button class="button delete">RESET</button>
-        <button class="button close">Close</button>
+        <button class="button delete" type="reset">RESET</button>
+        <button class="button close">CLOSE</button>
     </body>
     </center>
     <div class="scrolling-text">
