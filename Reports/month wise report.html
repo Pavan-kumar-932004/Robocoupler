@@ -4,7 +4,6 @@
     <h1>MONTH WISE REPORT</h1>
     </center>
     <head>
-        <center>
         
             <style>
                 h1{
@@ -12,13 +11,13 @@
         color: #0C134F;
         text-align: center;
     }
-    input{
+    /*input{
       width: 200px;
       padding: 1px;
       border-radius: 4px;
       background-color:#FFF4E0;
       text-emphasis-color: black;
-    }
+    }*/
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -42,7 +41,7 @@
     }
     
     .close {
-      background-color: #FFC107; 
+      background-color: #2196F3;  
     }
     .button:hover {
       opacity: 0.8;
@@ -52,10 +51,8 @@
               padding:0;
               font-family: Calibri, Arial, sans-serif;
               }
-            </style>
-        
-        <style>
-     div{
+    
+     .main_table{
 
     border-style:groove;
     padding: 10px;
@@ -63,7 +60,9 @@
     border: solid 1px black;
     border-radius: 3px;
     width: 600px;
-   
+    margin: auto;
+  width: 50%;
+  padding: 10px;
   }
   .scrolling-text marquee {
     font-weight: bold;
@@ -87,7 +86,7 @@
   .heading{
     background-color: white;
         width: 100vw;
-        height: 150px;
+        height: 170px;
         margin-left: calc(50% - 50vw); 
         margin-right: calc(50% - 50vw);
         margin: 0;
@@ -137,7 +136,7 @@ body{
     
 }
 
-input{
+input[type="text"],input[type="date"]{
   width: 200px;
   padding: 1px;
   border-radius: 4px;
@@ -210,9 +209,9 @@ width:auto;
         <body>
           <div class="heading">
             <center>
-            <img src="logo.png" width="70">
-            <img src="img.jpg" width="290"  >
-            <img src="msme.jpg" width="100">
+            <img src="../images/logo.png" width="70">
+            <img src="../images/img.jpg" width="290"  >
+            <img src="../images/msme.jpg" width="100">
             
         </center><br>
         <nav class="w3-bar w3-black">
@@ -323,31 +322,33 @@ width:auto;
             
                                 </div>
     
-            <div>
-                <table>
+            <div class="main_table">
+                <center>
+                <form method="get" >
+                <table align="center">
                     <tr>
                         <td >Year:</td>
-                        <td><input type="date" /></td>
+                        <td><input type="date"></td>
                     </tr>
                     <tr>
                         <td >Recieved dose:</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <td >Dose type:</td>
                         <td>
                             <select>
-                                <option>c</option>
-                                <option>java</option>
-                                <option>python</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
                             </select></td>
                     </tr>
                     <tr>
                         <td  >Interface category</td>
                         <td><select>
-                            <option>c</option>
-                            <option>java</option>
-                            <option>python</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
                         </select></td>
                     </tr>
                     <tr>
@@ -366,25 +367,27 @@ width:auto;
                     </tr>
                     <tr>
                         <td >Info no:</td>
-                            <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
-                                <input type="date" id="dob" name="dob"></td></td>
+                            <td><input type="date" id="dob" name="dob1"> To: <td><label for="dob"></label>
+                                <input type="date" id="dob" name="dob2"></td></td>
                     </tr>
                     <tr>
                         <td >Employee no:</td>
-                        <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
-                            <input type="date" id="dob" name="dob"></td></td>
+                        <td><input type="date" id="dob" name="dob3"> To: <td><label for="dob"></label>
+                            <input type="date" id="dob" name="dob4"></td></td>
                     </tr>
                     <tr>
                         <td  >Msg/err:</td>
                         <td><input type="text" /></td>
                     </tr>
                     </table>
-                    
-                   
+                
+                </form>
+            </center>
             </div>
+            <center>
             <button  class="button ok" >GENERATE</button>
-        <button class="button delete">RESET</button>
-        <button class="button close">Close</button>
+        <button class="button delete" type="reset">RESET</button>
+        <button class="button close">CLOSE</button></center>
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>

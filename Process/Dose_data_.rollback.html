@@ -13,7 +13,7 @@
   .heading{
     background-color: white;
         width: 100vw;
-        height: 150px;
+        height:150px;
         margin-left: calc(50% - 50vw); 
         margin-right: calc(50% - 50vw);
         margin: 0;
@@ -80,6 +80,20 @@ input{
   border-radius: 5px;
   cursor: pointer;
 }
+.ok {
+  background-color: #4CAF50; /* Green */
+}
+
+.delete {
+  background-color: #f44336 /* Red */
+}
+.close {
+  background-color: #2196F3;  
+}
+.button:hover {
+  opacity: 0.8;
+  background-color:#333333;
+}
 
        
  .centrebox{
@@ -89,7 +103,7 @@ padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:500px;
 
 }
 .scrolling-text marquee {
@@ -131,12 +145,13 @@ width:auto;
 .dropdown:hover .dropdown-content {display: block;}
 
     </style>
+    <center>
     <body bgcolor="146C94">
         <div class="heading">
             <center>
-            <img src="logo.png" width="70">
-            <img src="img.jpg" width="290"  >
-            <img src="msme.jpg" width="100">
+                <a href="../Main_page/Main_page_code.html"><img src="../images/logo.png" width="70"></a>
+                <a href="../Main_page/Main_page_code.html"><img src="../images/img.jpg" width="290"></a>
+                <img src="../images/msme.jpg" width="100">
             
         </center><br>
         <nav class="w3-bar w3-black">
@@ -246,9 +261,13 @@ width:auto;
                                          </nav>
             
                                 </div>
-    
-            <h1 style="margin-top: 20px;margin-bottom: 2px;">DOSE DATA ROLLBACK</h1>
-        <div class="centered">
+            
+
+            <center>
+            <h1>DOSE DATA ROLLBACK</h1>
+            </center>
+            <form>
+        <div class="centrebox">
             <table>
                 <tr>
                     <td>File to rollback:</td>
@@ -287,12 +306,14 @@ width:auto;
                
                 </table>
         </div> <br>
+    </center>
       <center>
         <div class="but">
             <button  class="button ok" >GENERATE</button>
-            <button class="button delete">RESET</button>
-            <button class="button close">Close</button>
+            <button class="button delete" type="reset">RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
         </div>
+    </form>
                 
       </center>
         <div class="scrolling-text">
