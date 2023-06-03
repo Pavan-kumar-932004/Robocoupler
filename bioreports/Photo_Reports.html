@@ -218,6 +218,15 @@ left: 0;
 right: 0;
 width:auto;
 }
+.centrebox{
+  border-style:groove;
+padding: 10px;
+background: #6C9BCF;
+border: solid 1px black;
+border-radius: 3px;
+width:530px;
+
+}
 .dropdown {
             position: relative;
             display: inline-block;
@@ -356,43 +365,47 @@ width:auto;
                                      </nav>
         
                             </div>
-        <h1><marquee></marquee><center>PHOTO REPORTS</center></marquee></h1>
+        <h1><center>PHOTO REPORTS</center></h1>
         
-      <table align="center">
+      <center>
+        <div class="centrebox">
+          <table align="center">
         
-      <tr>
-        <tr>
-            <td>Institute No:</td>
-            <td><select name="insno" class="sai">
-              <option value="1">Category 1</option>
-              <option value="2">Category 2</option>
-              <option value="3">Category 3</option>
-            </select></td>
-            
-        </tr>
-        <tr>
-          <tr>
-              <td>Available In:</td>
-              <td><input type="month" name="year" value="2023" class="sai" min="1900" max="2023"></td>
-          </tr>
-        <tr>
-          <tr>
             <tr>
-                <td>To Be Captured In:</td>
-                <td><input type="month" name="year1" value="2023"  class ="sai"vmin="1900" max="2023" ></td>
-            </tr>
-        
-       
-            <tr>
-              <td>Captured In The Period From Date: </td>
-                     
-              <td><label for="dob"></label>
-                  <input type="date" id="dob" name="dob1"> To Date: <label for="dob"></label>
-                  <input type="date" id="dob" name="dob2">
-              </td>
-          </tr>
-          
-        </table>
+              <tr>
+                  <td>Institute No:</td>
+                  <td><select name="insno" class="sai">
+                    <option value="1">Category 1</option>
+                    <option value="2">Category 2</option>
+                    <option value="3">Category 3</option>
+                  </select></td>
+                  
+              </tr>
+              <tr>
+                <tr>
+                    <td>Available In:</td>
+                    <td><input type="month" name="year" value="2023" class="sai" min="1900" max="2023"></td>
+                </tr>
+              <tr>
+                <tr>
+                  <tr>
+                      <td>To Be Captured In:</td>
+                      <td><input type="month" name="year1" value="2023"  class ="sai"vmin="1900" max="2023" ></td>
+                  </tr>
+              
+             
+                  <tr>
+                    <td>Captured In The Period From Date: </td>
+                           
+                    <td><label for="dob"></label>
+                        <input type="date" id="dob" name="dob1"> To Date: <label for="dob"></label>
+                        <input type="date" id="dob" name="dob2">
+                    </td>
+                </tr>
+                
+              </table>
+        </div>
+      </center>
         <div class="center">
             
             
