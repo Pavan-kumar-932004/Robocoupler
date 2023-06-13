@@ -383,7 +383,7 @@ width:auto;
                     <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
                   </div>
         </div>
-        <?php
+<?php
 // Get the user's IP address as the identifier
 $userIdentifier = $_SERVER['REMOTE_ADDR'];
 
