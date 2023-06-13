@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><?php
+// Get the user's IP address as the identifier
+$userIdentifier = $_SERVER['REMOTE_ADDR'];
+
+// Get the current page's URL
+$pageURL = $_SERVER['REQUEST_URI'];
+
+// Define the path to the JSON file
+$jsonFilePath = '../visits/count.json';
+
+// Read the JSON file contents
+$jsonData = file_get_contents($jsonFilePath);
+
+// Convert the JSON data to an associative array
+$visitsData = json_decode($jsonData, true);
+
+// Check if the user already has visit data
+if (!isset($visitsData[$userIdentifier])) {
+  $visitsData[$userIdentifier] = [];
+}
+
+// Check if the user has visited the current page
+if (!isset($visitsData[$userIdentifier][$pageURL])) {
+  $visitsData[$userIdentifier][$pageURL] = [
+    'visitCount' => 1,
+    'pageTitle' => ''
+  ];
+} else {
+  $visitsData[$userIdentifier][$pageURL]['visitCount']++;
+}
+
+// Get the value of the <h1> tag
+$pageTitle = '';
+$dom = new DOMDocument();
+@$dom->loadHTMLFile($_SERVER['DOCUMENT_ROOT'] . $pageURL);
+$headings = $dom->getElementsByTagName('h1');
+if ($headings->length > 0) {
+  $pageTitle = $headings->item(0)->nodeValue;
+}
+$visitsData[$userIdentifier][$pageURL]['pageTitle'] = $pageTitle;
+
+// Convert the updated data back to JSON
+$updatedJsonData = json_encode($visitsData);
+
+// Write the updated JSON data back to the file
+file_put_contents($jsonFilePath, $updatedJsonData);
+
+// Set a cookie to track the user's visit
+$cookieName = 'visited_'.$userIdentifier.'_'.$pageURL;
+$cookieValue = true;
+$cookieExpiration = time() + (3600 * 24 * 30); // Expires in 30 days
+setcookie($cookieName, $cookieValue, $cookieExpiration, '/');
+?>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -383,46 +437,6 @@ width:auto;
                     <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
                   </div>
         </div>
-<?php
-// Get the user's IP address as the identifier
-$userIdentifier = $_SERVER['REMOTE_ADDR'];
-
-// Get the current page's URL
-$pageURL = $_SERVER['REQUEST_URI'];
-
-// Define the path to the JSON file
-$jsonFilePath = '../visits/count.json';
-
-// Read the JSON file contents
-$jsonData = file_get_contents($jsonFilePath);
-
-// Convert the JSON data to an associative array
-$visitsData = json_decode($jsonData, true);
-
-// Check if the user already has visit data
-if (!isset($visitsData[$userIdentifier])) {
-  $visitsData[$userIdentifier] = [];
-}
-
-// Check if the user has visited the current page
-if (!isset($visitsData[$userIdentifier][$pageURL])) {
-  $visitsData[$userIdentifier][$pageURL] = 1;
-} else {
-  $visitsData[$userIdentifier][$pageURL]++;
-}
-
-// Convert the updated data back to JSON
-$updatedJsonData = json_encode($visitsData);
-
-// Write the updated JSON data back to the file
-file_put_contents($jsonFilePath, $updatedJsonData);
-
-// Set a cookie to track the user's visit
-$cookieName = 'visited_'.$userIdentifier.'_'.$pageURL;
-$cookieValue = true;
-$cookieExpiration = time() + (3600 * 24 * 30); // Expires in 30 days
-setcookie($cookieName, $cookieValue, $cookieExpiration, '/');
-?>
 
           
 </body>
