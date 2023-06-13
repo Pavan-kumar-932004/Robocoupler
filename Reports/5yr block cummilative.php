@@ -1,20 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Anuual Dose Report</title>
-  <style>
-    h1{
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MB_form_3</title>
+    <style>    
+        *{font-family: Calibri, Arial, sans-serif;}
+        html{background-color: #97DEF9;}
+        h4{text-align: end;color: darkgreen;}
+        h1{
         font-style:initial;
         color: #0C134F;
         text-align: center;
     }
+        div.final{
+    background: #6C9BCF;
+    border: solid 1px black;
+    border-radius: 3px;
+    padding: 10px;
+    width:600px;
     
-    body{
-      background-color:#97DEF9;
-      font-family: Calibri, Arial, sans-serif;
-      padding-bottom: 30px;
+    
+  }
+  input{
+      width: 200px;
+      padding: 1px;
+      border-radius: 4px;
+      background-color:#FFF4E0;
+      text-emphasis-color: black;
     }
-    
+
+  .scrolling-text {
+  padding: 5px;
+  background-color: #006CDF;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+.scrolling-text marquee {
+  font-weight: bold;
+  width: 100%;
+}
+
+
+        .tab{margin-left: auto;margin-right: auto;}
+        input[type=dc]{width: 125%;border: inset;background-color: #6C9BCF}
+        input[type=nwc]{width: 125%;border: inset;background-color: #6C9BCF}
+        input[type=mc]{width: 125%;border: inset;background-color: #6C9BCF}
+        input[type=oc]{width:125%;border: inset;background-color: #6C9BCF}
+        input[type=msgs]{width: 200% ;border: inset;background-color: lightgray}
+        .radio{margin-left: auto;text-align: center;padding-top: 10px;margin-right: auto;}
+        .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
     .ok {
       background-color: #4CAF50; /* Green */
     }
@@ -28,62 +78,13 @@
     }
     
     .close {
-      background-color: #FFC107; 
+      background-color: #2196F3; 
     }
     .button:hover {
       opacity: 0.8;
-      background-color:#333333;
+      background-color: #333333;
     }
-    .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-}
-.button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 5px;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    label {
-      font-weight: bold;
-    }
-    
-    input[type="date"] {
-      padding: 0px;
-      border-radius: 3px;
-      border: 1px solid black;
-      background-color: #FFF4E0;
-    }
-    
-    input[type="submit"] {
-      padding: 10px 20px;
-      border-radius: 5px;
-      background-color:#FFF4E0 ;
-      
-      border: 1px;
-      cursor: pointer;
-    }
-    .scrolling-text {
-  padding: 5px;
-  background-color: #006CDF;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.scrolling-text marquee {
-  font-weight: bold;
-  width: 100%;
-}
-*{
+    *{
           padding:0;
           font-family: Calibri, Arial, sans-serif;
           
@@ -133,7 +134,7 @@
     color: #0C134F;
     font-size:xx-large;
     text-align: center;
-    margin-top:160px;
+    margin-top:190px;
 }
 body{
     background-color: #97DEF9;
@@ -167,7 +168,7 @@ padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:800px;
+width:650px;
 
 }
 .scrolling-text marquee {
@@ -209,9 +210,9 @@ width:auto;
 .dropdown:hover .dropdown-content {display: block;}
 
     </style>
-    </head>
-    <body>
-      <div class="heading">
+</head>
+<body>
+    <div class="heading">
         <center>
         <a href="../Main_page/Main_page_code.html"><img src="../images/logo.png" width="70"></a>
         <a href="../Main_page/Main_page_code.html"><img src="../images/img.jpg" width="290"></a>
@@ -322,76 +323,107 @@ width:auto;
                                      </nav>
         
                             </div>
-      
-        <h1><center>ANNUAL DOSE REPORT</center></h1>
+    <h1>BLOCK CUMULATIVE DOSE REPORT</h1>
+    <center>
+    <div class="final">
         <form>
-        <center>
-        <div class="centrebox">
-      <table align="center">
-        <tr>
-          <td>Year:</td>
-          <td><label for="dob"></label>
-              <input type="date"  id="dob" name="dob1"> To <label for="dob"></label>
-              <input type="date" id="dob" name="dob2"></td>
-      </tr>
-      <tr>
-        <tr>
-            <td>Recieved Dose:</td>
-            <td><input type="text" name="rdose" class="sai" /></td>
+        <table class="tab">
+          <tr>
+            <td>Year:</td>
+            <td><input type="date" >
         </tr>
-        <tr>
-            <td> Institution Category:</td>
-            <td><select  name="inscat" class="sai">
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
-              </select></td>
-        </tr>
-        <tr>
-            <td>Class Code:</td>
-            <td><select name="clscode" class="sai">
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
-              </select></td>
-        </tr>
-        <tr><td> <label for="vehicle1">Institution No</label><input name="instno" type="checkbox"> </td>
-          <td> <label for="vehicle1">Employee No</label> <input name="employeno" type="checkbox" ></td></tr>
-                    
-        <tr>
-            <td>Monitoring Center:</td>
-            <td><input name="montcenter" type="text"class="sai" /></td>
-        </tr>
-       
-            <td>Institute No. From: </td>
+                <tr>
+                    <td>Type of records:</td>
+                    <td><select><option>Number1</option><option>number 2</option></select></td>
+                </tr>
+                
+                    <td>Analytical reports:</td>
+                    <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
+                        <input type="date" id="dob" name="dob"></td></td>
+                </tr>
                
-            <td><label for="dob"></label>
-                <input  type="date" id="dob" name="dob3"> To <label for="dob"></label>
-                <input type="date" nameid="dob" name="dob4">
-            </td>
-        </tr>
-        <tr>
-            <td>Employee No.From:  </td>
-            <td><label for="dob"></label>
-                <input type="date" id="dob" name="dob5"> To <label for="dob"></label>
-                <input type="date" id="dob" name="dob6"> </td>
-        </tr>
-     
-            <td>msg/err:</td>
-            <td><input type="text" name="msg" class="sai" /></td>
-        </tr>
-        </table>
-      </div>
-    </center>
-        <div class="center">
-            <button  class="button ok" >GENERATE</button>
-            <button class="button delete" type="reset">RESET</button>
-            <a href="../Main_page/Main_page_code.html"><button class="button view" type="button"> CLOSE</button></a>
-            
-            </div>
-          </form>
-            <div class="scrolling-text">
-                <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
-              </div>
-        </body>
-        </html>
+                <tr>
+                    <td>Institute No:</td>
+                    <td><input type="date" id="dob" name="dob"><div style="margin-left: 210px;margin-top: -20px;">To:</div> <td><label for="dob"></label>
+                        <input type="date" id="dob" name="dob"></td></td>
+                </tr>
+                
+                <tr>
+                  <td>Employee No:</td>
+                  <td><input type="date" id="dob" name="dob"> To: <td><label for="dob"></label>
+                      <input type="date" id="dob" name="dob"></td></td>
+              </tr>
+                <tr>
+                  <td>Dose Type:</td>
+                  <td><select><option>Number1</option><option>number 2</option></select></td>
+              </tr>
+              
+                <tr>
+                  <td>Active in highest year:</td>
+                  <td><div style="margin-left: -100px;"><input type="checkbox"></div></td>
+                 </tr>
+                <tr>
+                    <td>Recieved dose:</td>
+                    <td><input type="text" >
+                </tr>
+               
+                    <td>Message/Error</td>
+                    <td><input type="text" value=""/></td>
+                </tr>
+                </table>
+            </center>
+                <div class="radio">
+                    
+                    <button  class="button ok" >GENERATE</button>
+                    <button class="button delete" type="reset">RESET</button>
+                    <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+                </div>
+            </form><br><br>
+                <div class="scrolling-text">
+                    <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
+                  </div>
+        </div>
+        <?php
+// Get the user's IP address as the identifier
+$userIdentifier = $_SERVER['REMOTE_ADDR'];
+
+// Get the current page's URL
+$pageURL = $_SERVER['REQUEST_URI'];
+
+// Define the path to the JSON file
+$jsonFilePath = '../visits/count.json';
+
+// Read the JSON file contents
+$jsonData = file_get_contents($jsonFilePath);
+
+// Convert the JSON data to an associative array
+$visitsData = json_decode($jsonData, true);
+
+// Check if the user already has visit data
+if (!isset($visitsData[$userIdentifier])) {
+  $visitsData[$userIdentifier] = [];
+}
+
+// Check if the user has visited the current page
+if (!isset($visitsData[$userIdentifier][$pageURL])) {
+  $visitsData[$userIdentifier][$pageURL] = 1;
+} else {
+  $visitsData[$userIdentifier][$pageURL]++;
+}
+
+// Convert the updated data back to JSON
+$updatedJsonData = json_encode($visitsData);
+
+// Write the updated JSON data back to the file
+file_put_contents($jsonFilePath, $updatedJsonData);
+
+// Set a cookie to track the user's visit
+$cookieName = 'visited_'.$userIdentifier.'_'.$pageURL;
+$cookieValue = true;
+$cookieExpiration = time() + (3600 * 24 * 30); // Expires in 30 days
+setcookie($cookieName, $cookieValue, $cookieExpiration, '/');
+?>
+
+          
+</body>
+</html>
