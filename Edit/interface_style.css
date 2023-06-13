@@ -201,7 +201,7 @@ button#edit{
 background-color: #f44336;
 }
 button#reset{
-    background-color: #2196F3; 
+    background-color: orange;
 }
 button{
     font-family:Calibri;
