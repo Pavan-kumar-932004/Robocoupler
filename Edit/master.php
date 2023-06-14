@@ -333,6 +333,11 @@ $(document).ready(function() {
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>
 </form>
+<script>
+    function updateSecondField(value) {
+      document.getElementById("isname").value = value;
+    } 
+</script>
 <?php
 if(isset($_POST["insname"])&&isset($_POST["pname"])&&isset($_POST["ename"])&&isset($_POST["title"])&&isset($_POST["rwname"])&&isset($_POST["sex"])
 &&isset($_POST["dob"])&&isset($_POST["sob"])&&isset($_POST["scode"])&&isset($_POST["qcode"])&&isset($_POST["nwork"])&&isset($_POST["nwork2"])
