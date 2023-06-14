@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website with Sidebar</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav>
+      <!-- Navbar content -->
+    </nav>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <button class="sidebar-icon" onclick="toggleSidebar()">&#9776;</button>
+      <div class="sidebar-dropdown" id="frequentlyVisitedDropdown">
+        <h3 class="dropdown-heading">Frequently Visited</h3>
+        <ul id="frequentlyVisitedList"></ul>
+      </div>
+      <button class="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Page content -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><?php
-// Get the user's IP address as the identifier
-$userIdentifier = $_SERVER['REMOTE_ADDR'];
-
+<head><link rel="stylesheet" type="text/css" href="../sidebar/styles.css"><?php
 // Get the current page's URL
 $pageURL = $_SERVER['REQUEST_URI'];
 
@@ -16,43 +13,22 @@ $jsonData = file_get_contents($jsonFilePath);
 // Convert the JSON data to an associative array
 $visitsData = json_decode($jsonData, true);
 
-// Check if the user already has visit data
-if (!isset($visitsData[$userIdentifier])) {
-  $visitsData[$userIdentifier] = [];
-}
-
-// Check if the user has visited the current page
-if (!isset($visitsData[$userIdentifier][$pageURL])) {
-  $visitsData[$userIdentifier][$pageURL] = [
-    'visitCount' => 1,
-    'pageTitle' => ''
-  ];
+// Check if the page URL already exists in the data
+if (!isset($visitsData[$pageURL])) {
+  // Set the visit count to 1 for a new page
+  $visitsData[$pageURL] = 1;
 } else {
-  $visitsData[$userIdentifier][$pageURL]['visitCount']++;
+  // Increment the visit count for an existing page
+  $visitsData[$pageURL]++;
 }
-
-// Get the value of the <h1> tag
-$pageTitle = '';
-$dom = new DOMDocument();
-@$dom->loadHTMLFile($_SERVER['DOCUMENT_ROOT'] . $pageURL);
-$headings = $dom->getElementsByTagName('h1');
-if ($headings->length > 0) {
-  $pageTitle = $headings->item(0)->nodeValue;
-}
-$visitsData[$userIdentifier][$pageURL]['pageTitle'] = $pageTitle;
 
 // Convert the updated data back to JSON
 $updatedJsonData = json_encode($visitsData);
 
 // Write the updated JSON data back to the file
 file_put_contents($jsonFilePath, $updatedJsonData);
-
-// Set a cookie to track the user's visit
-$cookieName = 'visited_'.$userIdentifier.'_'.$pageURL;
-$cookieValue = true;
-$cookieExpiration = time() + (3600 * 24 * 30); // Expires in 30 days
-setcookie($cookieName, $cookieValue, $cookieExpiration, '/');
 ?>
+
 
 
     <meta charset="UTF-8">
@@ -438,6 +414,6 @@ width:auto;
                   </div>
         </div>
 
-          
+        
 </body>
 </html>
