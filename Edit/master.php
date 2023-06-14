@@ -1,6 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="interface_style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
@@ -24,6 +28,7 @@ $(document).ready(function() {
   }
         
         // Optionally, display a success message
+        $('input[name="isname"]').val(response.insname);
         $('#msg').val('Data retrieved successfully.');
       },
       error: function() {
@@ -324,10 +329,10 @@ $(document).ready(function() {
             </center>
         </div>
             <center>
-            <div class="button">
-            <button  class="button ok" type="submit" id="ok">SAVE</button>
-            <button class="button delete" type="reset" id="delete">RESET</button>
-            <button class="button close" type="button"  name="edit_button" id="edit">VIEW</button>
+            <div class="butt">
+            <button class="button ok" type="submit" id="ok" style="background-color: #c5c221;">SAVE</button>
+            <button class="button delete" type="reset" id="delete" style="background-color: #df8b1c;">RESET</button>
+            <button class="button close" type="button"  name="edit_button" id="edit" style="background-color: #4CAF50;">VIEW</button>
             </div>
              </center>
              <br>
