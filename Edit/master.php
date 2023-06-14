@@ -323,12 +323,16 @@ $(document).ready(function() {
                 </table>
             </center>
         </div>
-        <div class="buttons">
             <center>
-            <button type="submit" id="save">Save</button>
-            <button type="reset" id="reset">Reset</button>
-             <button type="button" name="edit_button" id="edit">View</button></center>
-        </div>
+            <div class="button">
+            <button  class="button ok" type="submit" id="ok">SAVE</button>
+            <button class="button delete" type="reset" id="delete">RESET</button>
+            <button class="button close" type="button"  name="edit_button" id="edit">VIEW</button>
+            </div>
+             </center>
+             <br>
+             <br>
+
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>
