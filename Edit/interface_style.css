@@ -198,7 +198,7 @@ button#save{
 background-color: #4CAF50; 
 }
 button#edit{
-background-color: #f44336;
+background-color: rgb(94, 94, 204);
 }
 button#reset{
     background-color: orange;

@@ -2,6 +2,40 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="interface_style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  $('#edit').click(function() {
+    var employeeNumber = $('input[name="ename"]').val();
+    console.log('Employee Number:', employeeNumber);
+    
+    $.ajax({
+      url: 'retrieve_data.php',
+      type: 'POST',
+      data: { employeenumber: employeeNumber },
+      success: function(response) {
+        console.log('Response:', response);
+        // Update the fields with the retrieved data
+        for (var key in response) {
+    if (response.hasOwnProperty(key)) {
+      var value = response[key];
+      $('input[name="' + key + '"]').val(value);
+    }
+  }
+        
+        // Optionally, display a success message
+        $('#msg').val('Data retrieved successfully.');
+      },
+      error: function() {
+        // Handle error if any
+        $('#msg').val('Error occurred while retrieving data.');
+      }
+    });
+  });
+});
+
+
+    </script>
     </head>
     <body>
     <center><h1>NAME MASTER</h1></center>
@@ -293,35 +327,18 @@
             <center>
             <button type="submit" id="save">Save</button>
             <button type="reset" id="reset">Reset</button>
-             <button type="button" name="edit_button" id="edit">Edit</button></center>
+             <button type="button" name="edit_button" id="edit">View</button></center>
         </div>
         <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>
 </form>
 <script>
-    
-    if (!loggedIn()) {
-    window.location.href = "../login/main.php";
-    }
-    
-
     function updateSecondField(value) {
       document.getElementById("isname").value = value;
-    }  
-</script> 
+    } 
+</script>
 <?php
-if (isset($_POST['edit_button'])) {
-    
-    $ename = $_POST['ename'];
-
-    
-    checkname($ename);
-}
-function checkname($ename) {
-    
-    echo "Edit button clicked for employee number: $ename";
-}
 if(isset($_POST["insname"])&&isset($_POST["pname"])&&isset($_POST["ename"])&&isset($_POST["title"])&&isset($_POST["rwname"])&&isset($_POST["sex"])
 &&isset($_POST["dob"])&&isset($_POST["sob"])&&isset($_POST["scode"])&&isset($_POST["qcode"])&&isset($_POST["nwork"])&&isset($_POST["nwork2"])
 &&isset($_POST["nwork3"])&&isset($_POST["tno"])&&isset($_POST["mno"])&&isset($_POST["crw"])&&isset($_POST["aadhar"])&&isset($_POST["tid"])
