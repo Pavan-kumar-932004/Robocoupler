@@ -124,29 +124,33 @@ border-radius: 4px;
 background-color:#FFF4E0;
 text-emphasis-color: black;
 }
-.button {
-display: inline-block;
-padding: 10px 20px;
-margin: 5px;
-color: white;
-font-size: 16px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-}
-.ok {
-background-color: blue; /* Green */
-}
 
-.delete {
-background-color: blue; /* Red */
-}
-.close {
-background-color: blue; 
-}
-.button:hover {
-opacity: 0.8;
-}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px;
+  }
+  .ok {
+    background-color: #c5c221; /* Green */
+  }
+  
+  .delete {
+    background-color: #df8b1c; /* Red */
+  }
+  .close {
+    background-color: #4CAF50; 
+  }
+  .button:hover {
+    opacity: 0.8;
+    background-color:#333333;
+  }
+  
 .centrebox{
 
 border-style:groove;
@@ -194,21 +198,3 @@ width:auto;
   }
   .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
-button#save{
-background-color: #4CAF50; 
-}
-button#edit{
-background-color: rgb(94, 94, 204);
-}
-button#reset{
-    background-color: orange;
-}
-button{
-    font-family:Calibri;
-    font-size: 20px;
-    margin:3px;
-    padding:3px;
-    border-radius:5%;
-    
-    background:#FFF4E0;
-}
