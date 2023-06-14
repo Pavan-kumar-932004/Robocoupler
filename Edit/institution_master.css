@@ -139,28 +139,30 @@ background-color:#FFF4E0;
 text-emphasis-color: black;
 }
 .button {
-display: inline-block;
-padding: 10px 20px;
-margin: 5px;
-color: white;
-font-size: 16px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-}
-.ok {
-background-color: blue; /* Green */
-}
-
-.delete {
-background-color: blue; /* Red */
-}
-.close {
-background-color: blue; 
-}
-.button:hover {
-opacity: 0.8;
-}
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px;
+  }
+  .ok {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .delete {
+    background-color: #f44336 /* Red */
+  }
+  .close {
+    background-color: #2196F3;  
+  }
+  .button:hover {
+    opacity: 0.8;
+    background-color:#333333;
+  }
 
 .centrebox{
 

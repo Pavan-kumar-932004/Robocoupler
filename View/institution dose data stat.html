@@ -1,55 +1,11 @@
 <!DOCTYPE html>
-<html>
-<style background-color="cornflowerblue">
-input, select {
-  
-  background:#FFF4E0;
-  display: inline-block;
-  border: 1px solid cornflowerblue;
-  border-radius: 5px;
-  border:1px solid black;
-  padding:4px;
-  
-}
-input[type="text"]:hover {
-      background-color:#F5EAEA ;
-    
-    }
-
-.table {
-  border-radius: 2px;
-  background-color: #6C9BCF;
-  padding: 30px;
-  height: 80px;
-  width: 400px;
-  margin-top:50px;
-}
-/*button:hover{
-    transition: 0.2s ease-in;
-    transform: translateY(5px);
-    background-color: #5ff064c3;
-}*/
-.buttons{
-    margin-top:20px;
-}
-td{
-    font-family: Calibri;
-    font-size:20px;
-}
-.scrolling-text {
-  padding: 5px;
-  background-color: #006CDF;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.scrolling-text marquee {
-  font-weight: bold;
-  width: 100%;
-}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTITUTION DOSE DATA</title>
+<style>
 *{
           padding:0;
           font-family: Calibri, Arial, sans-serif;
@@ -131,10 +87,10 @@ input{
 }
 
 .delete {
-  background-color: #4CAF50; /* Red */
+  background-color: #4CAF50;  /* Red */
 }
 .close {
-  background-color: #f44336  
+  background-color: #2196F3;  
 }
 .button:hover {
   opacity: 0.8;
@@ -151,7 +107,7 @@ padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:510px;
 
 }
 .scrolling-text marquee {
@@ -307,9 +263,10 @@ width:auto;
 
 
 <h1><center>INSTITUTION DOSE DATA STATISTICS</center></h1>
-
-<center><div class="table" style="border: 2px solid black";>
-  <form>
+<br>
+<center>
+  <div class="centrebox">
+    <form>
     <table>
         <tr>
     <td><label for="fname"><center>Institution Number</center></label></td>
@@ -318,15 +275,11 @@ width:auto;
     </table>
   </form>
 </div></center>
+<br><br>
 <center>
- <div class="buttons">
   <button class="button delete">VIEW</button>
   <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
-</div>
 </center>
-<div class="scrolling-text">
-  <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
-</div>
 <div class="scrolling-text">
   <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
 </div>

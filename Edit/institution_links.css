@@ -12,21 +12,38 @@ table{
     border-collapse:collapse;
 
 }
-.buttons{
-    margin-top:25px;
-}
-button{
-    font-family:Calibri;
-    font-size: larger;
-     margin:5px;
-     padding:4px;
-     background:#FFF4E0;
-}
-/*button:hover{
-    transition: 0.2s ease-in;
-    transform: translateY(5px);
-    background: #5ff064c3;
-}*/
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 100px;
+   
+  }
+  .okk {
+    background-color: #4CAF50; /* Green */
+  }
+  .reset {
+    background-color: #df8b1c;/* Orange */
+  }
+  .add {
+    background-color: #c5c221;/* Yelow */
+  }
+  .del {
+    background-color: #f44336  /* Red */
+  }
+ 
+  .closse {
+    background-color: #2196F3;  /* Blue */
+  }
+  .button:hover {
+    opacity: 0.8;
+    background-color:#333333;
+  }
 body{
     background:#97DEF9;
 }
@@ -34,6 +51,7 @@ input,select{
     border:1px solid black;
     background-color: #FFF4E0;
     border-radius: 5px;
+    
 }
 td{
     padding:13px;
@@ -108,7 +126,7 @@ h1{
 color: #0C134F;
 font-size:xx-large;
 text-align: center;
-margin-top:190px;
+margin-top:165px;
 }
 body{
 background-color: #97DEF9;

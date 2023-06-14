@@ -1,176 +1,112 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YEARLY</title>
         <style>
-.buttons{
-    margin-top:25px;
-}
-.ok {
-      background-color: #4CAF50; /* Green */
-    }
-    
-    .delete {
-      background-color: #f44336; /* Red */
-    }
-    
-    .view {
-      background-color: #2196F3; 
-    }
-    .close {
-      background-color: #FFC107; 
-    }
-    .button:hover {
-      opacity: 0.8;
-      background-color:#333333;
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 5px;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-/*button:hover{
-    transition: 0.2s ease-in;
-    transform: translateY(5px);
-    background:#5ff064c3;
-}*/
-body{
-    background:#97DEF9;
-    font-family: Calibri, Arial, sans-serif;
-}
-input,select{
-    border:1px solid black;
-    background-color: #FFF4E0;
-    border-radius: 5px;
-}
-td{
-    padding:10px;
-    font-family: Calibri;
-    font-size: 20px;
-}
-table{
-    border-radius: 2px;
-    border:2px solid black;
-    background:#6C9BCF;
-}
-input[type="text"]:hover {
-      background-color:#F5EAEA ;
-    
-    }
-    .scrolling-text {
-  padding: 5px;
-  background-color: #006CDF;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 
-.scrolling-text marquee {
-  font-weight: bold;
-  width: 100%;
-}
-.heading{
-background-color: white;
-  width: 100vw;
-  height: 150px;
-  margin-left: calc(50% - 50vw); 
-  margin-right: calc(50% - 50vw);
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-      }
-      .heading h1{
+     *{
+          padding:0;
+          font-family: Calibri, Arial, sans-serif;
           
-          flex-grow: 1;
-      }
-      .img{
-          vertical-align: middle;
-          margin-left:auto;
-          margin-right:auto;
           
-      }
-      a:link {
-       color: rgb(1, 9, 100);
-       background-color: transparent;
-       text-decoration: none;
-       margin-right:50px;
-       
-       font-weight:bold;
-       border-radius: 5px;
-      }
-      a:hover {
-      color: rgb(80, 115, 242);
-      background-color: transparent;
-      text-decoration: underline;
-      }
-      a:active {
-      color: rgb(32, 2, 110);
-      background-color: transparent;
-      text-decoration: underline;
-      }
-h1{
-color: #0C134F;
-font-size:xx-large;
-text-align: center;
-margin-top:190px;
+          }
+  .heading{
+    background-color: white;
+        width: 100vw;
+        height: 150px;
+        margin-left: calc(50% - 50vw); 
+        margin-right: calc(50% - 50vw);
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+            }
+            .heading h1{
+                
+                flex-grow: 1;
+            }
+            .img{
+                vertical-align: middle;
+                margin-left:auto;
+                margin-right:auto;
+                
+            }
+            a:link {
+             color: rgb(1, 9, 100);
+             background-color: transparent;
+             text-decoration: none;
+             margin-right:50px;
+             
+             font-weight:bold;
+             border-radius: 5px;
+            }
+            a:hover {
+            color: rgb(80, 115, 242);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+            a:active {
+            color: rgb(32, 2, 110);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+    h1{
+    color: #0C134F;
+    font-size:xx-large;
+    text-align: center;
+    margin-top:190px;
 }
 body{
-background-color: #97DEF9;
-font-size:20px;
-
+    background-color: #97DEF9;
+    font-size:20px;
+    
 }
 
 input{
-width: 200px;
-padding: 1px;
-border-radius: 4px;
-background-color:#FFF4E0;
-text-emphasis-color: black;
+  width: 200px;
+  padding: 1px;
+  border-radius: 4px;
+  background-color:#FFF4E0;
+  text-emphasis-color: black;
 }
 .button {
-display: inline-block;
-padding: 10px 20px;
-margin: 5px;
-color: white;
-font-size: 16px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 40px;
 }
 .ok {
-      background-color: #4CAF50; /* Green */
-    }
-    
-    .delete {
-      background-color: #f44336; /* Red */
-    }
-    
-    .view {
-      background-color: #2196F3; 
-    }
-    .close {
-      background-color: #2196F3; 
-    }
-    .button:hover {
-      opacity: 0.8;
-      background-color:#333333;
-    }
+  background-color: #4CAF50; /* Green */
+}
 
-.centrebox{
+.delete {
+  background-color: #f44336 /* Red */
+}
+.close {
+  background-color: #2196F3;  
+}
+.button:hover {
+  opacity: 0.8;
+  background-color:#333333;
+}
+          
+ .centrebox{
 
 border-style:groove;
 padding: 10px;
 background: #6C9BCF;
 border: solid 1px black;
 border-radius: 3px;
-width:650px;
+width:510px;
 
 }
 .scrolling-text marquee {
@@ -188,32 +124,31 @@ right: 0;
 width:auto;
 }
 .dropdown {
-      position: relative;
-      display: inline-block;
-  }
+            position: relative;
+            display: inline-block;
+        }
 
 .dropdown-content {
-      padding:8px 16px;
-      margin-bottom: 50px;
-      display: none;
-      position: absolute;
-      background-color:rgba(255, 255, 255,0.8);
-      min-width: 190px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      text-align: left;
-      font-size:14px; 
-      border-radius: 15px;
-      align-items: center;
-      justify-content: space-between;
-      margin:2px 0;
-  }
-  
-  .dropdown:hover .dropdown-content {display:block;}
+            padding:8px 16px;
+            margin-bottom: 50px;
+            display: none;
+            position: absolute;
+            background-color:rgba(255, 255, 255,0.8);
+            min-width: 190px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+            font-size:14px; 
+            border-radius: 15px;
+            align-items: center;
+            justify-content: space-between;
+            margin:2px 0;
+        }
+        .dropdown:hover .dropdown-content {display:block;}
 .dropdown:hover .dropdown-content {display: block;}
         </style>
     </head>
-    <body>
+    <body><center>
         <div class="heading">
             <center>
             <a href="../Main_page/Main_page_code.html"><img src="../images/logo.png" width="70"></a>
@@ -323,7 +258,8 @@ width:auto;
             
             </div>
         <center><h1>YEARLY MASTER DATA</h1></center>
-        <center><table id="main" cellpadding="10px" cellspacing="7px">
+        <div class="centrebox">
+        <center><table>
          <tr>
             <td>Employee Number:</td>
             <td><input type="number"></td>
@@ -341,6 +277,7 @@ width:auto;
             </select></td>
          </tr>
         </table></center>
+      </div>
          <div style="margin-left: 60px;">
             <br>
             <center>
@@ -348,11 +285,10 @@ width:auto;
                 <button class="button delete" type="reset">GET LINKED DATA</button>
                 <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
          </div>
-         <div class="scrolling-text">
-            <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
-          </div>
+        
           <div class="scrolling-text">
             <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
           </div>
+        </centre>
     </body>
 </html>
