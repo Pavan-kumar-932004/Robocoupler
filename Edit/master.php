@@ -43,6 +43,7 @@ $(document).ready(function() {
     </script>
     </head>
     <body>
+    <div w3-include-html="../sidebar/test.html"></div>
     <center><h1>NAME MASTER</h1></center>
     <div class="heading">
             <center>
