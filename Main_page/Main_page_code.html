@@ -202,7 +202,7 @@
 
 /* The navigation menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding:  8px 8px 8px 32px ;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -225,19 +225,15 @@
   margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-right .5s;
-  padding: 20px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
 .sidenav {
-  left: 83%;
+    width: 0px;
+    left:100%;
+ 
 }
 
     .scrolling-text marquee {
@@ -375,7 +371,7 @@ width:auto;
                                         </div>
 
                                         <div class="dropdown">
-                                            <span onclick="openNav()">open</span>
+                                         <a><img src="../images/toggle-btn.png"onclick="openNav()"></a>   
                                             </div>
                                          </nav>
                                          <div id="mySidenav" class="sidenav">
@@ -412,13 +408,15 @@ width:auto;
                               </div>
                               <script>
                                 function openNav() {
-                                  document.getElementById("mySidenav").style.width = "250px";
-                                  document.getElementById("main").style.marginRight = "250px"; /* Change to marginRight */
+                                document.getElementById("mySidenav").style.width="250px";
+                                document.getElementById("mySidenav").style.left="85%";
+
+                                  
                                 }
                             
                                 function closeNav() {
-                                  document.getElementById("mySidenav").style.width = "0";
-                                  document.getElementById("main").style.marginRight = "0"; /* Change to marginRight */
+                                  document.getElementById("mySidenav").style.left="100%";
+                                 
                                 }
                               </script>
 
