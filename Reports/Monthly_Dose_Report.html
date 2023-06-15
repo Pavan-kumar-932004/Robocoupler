@@ -33,37 +33,33 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .radio{
-            margin-left: auto;
-            text-align: center;
-            padding-top: 40px;
-            margin-right: auto;
-            padding-right:10px;
-        }
-        button[id=button_1]{
-            background-color: #4CAF50; 
-            color:white;
-            
-        }
-        button[id=button_2]{
-            background-color: #f44336;
-            color: white;
-            
-        }
-        button[id=button_3]{
-            background-color: #2196F3;
-            color: white;
-            
-        }
-        button{
-            font-family:Calibri;
-            font-size: 20px;
-            margin:3px;
-            padding:3px;
-            border-radius:5%;
-            
-            background:#FFF4E0;
-        }/*
+        .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+.ok {
+  background-color: #4CAF50; /* Green */
+}
+
+.delete {
+  background-color: #df8b1c; /* Red */
+}
+.close {
+  background-color: #2196F3;  
+}
+.button:hover {
+  opacity: 0.8;
+  background-color:#333333;
+}
+        
+        /*
         button:hover{
             transition: 0.2s ease-in;
             transform: translateY(5px);
@@ -122,28 +118,7 @@
             background-color:#FFF4E0;
             text-emphasis-color: black;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .ok {
-            background-color: blue; /* Green */
-        }
-        .delete {
-            background-color: blue; /* Red */
-        }
-        .close {
-            background-color: blue; 
-        }
-        .button:hover {
-            opacity: 0.8;
-        }
+        
     </style>
     <style>
     .centrebox{
@@ -351,16 +326,16 @@
                     <td>Message:</td>
                     <td><input type="text" name="msg" id="msg"></td>
                 </tr>
-            </table><br>
+            </table><br><br>
             <center>
-            <div class="radio">
-                <button id="button_1" >GENERATE</button>
-                <button id="button_2" >RESET</button>
-                <button id="button_3" >CLOSE</button>
-            </div>
+            
+                <button  class="button ok" >GENERATE</button>
+            <button class="button delete" type="reset">RESET</button>
+            <a href="../Main_page/Main_page_code.html"><button class="button close" type="button">CLOSE</button></a>
+            
         </center>
-        </form>
-    </div>
+        </form><br><br>
+    </div><br>
     <div class="scrolling-text">
         <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
     </div>
