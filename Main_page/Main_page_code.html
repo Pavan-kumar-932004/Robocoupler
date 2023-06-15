@@ -193,7 +193,7 @@
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
+  left:0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -210,6 +210,7 @@
   transition: 0.3s;
 }
 
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
@@ -219,14 +220,14 @@
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 139px;
   font-size: 36px;
   margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s;
+  transition: margin-right .5s;
   padding: 20px;
 }
 
@@ -236,7 +237,7 @@
   .sidenav a {font-size: 18px;}
 }
 .sidenav {
-  right: 0;
+  left: 83%;
 }
 
     .scrolling-text marquee {
@@ -373,9 +374,9 @@ width:auto;
                                         </div>
                                         </div>
 
-                                        </center>
-    
-    
+                                        <div class="dropdown">
+                                            <span onclick="openNav()">open</span>
+                                            </div>
                                          </nav>
                                          <div id="mySidenav" class="sidenav">
                                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -383,15 +384,10 @@ width:auto;
                                             <a href="#">Services</a>
                                             <a href="#">Clients</a>
                                             <a href="#">Contact</a>
+                                            
                                           </div>
+                                        
                                           
-                                          <!-- Use any element to open the sidenav -->
-                                          <span onclick="openNav()">open</span>
-                                          
-                                          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-                                          <div id="main">
-                                            ...
-                                          </div>
             
                                 </div>
                                 <div class="info">
@@ -415,17 +411,16 @@ width:auto;
                                 <marquee behavior="scroll" direction="left">Welcome to Robocoupler - Innovating the future with robotics technology!</marquee>
                               </div>
                               <script>
-                              function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}                             
-                            </script>
+                                function openNav() {
+                                  document.getElementById("mySidenav").style.width = "250px";
+                                  document.getElementById("main").style.marginRight = "250px"; /* Change to marginRight */
+                                }
+                            
+                                function closeNav() {
+                                  document.getElementById("mySidenav").style.width = "0";
+                                  document.getElementById("main").style.marginRight = "0"; /* Change to marginRight */
+                                }
+                              </script>
 
                             
         
