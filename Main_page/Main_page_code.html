@@ -194,33 +194,80 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left:0;
-  background-color: #111; /* Black*/
+  background: linear-gradient(360deg, rgb(67, 92, 201) 15%, rgb(72, 154, 201)25%, rgb(92, 161, 201) 35%, 
+  rgb(178, 153, 238) 50%, rgb(178, 153, 238) 65%, rgb(72, 154, 201) 80%, rgb(67, 92, 201) 100%);
+
+  /*background-color: #111;  Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+
 
 /* The navigation menu links */
 .sidenav a {
   padding:  8px 8px 8px 32px ;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #e2e2e2;
   display: block;
   transition: 0.3s;
+  position:relative 
+  
 }
+/*.sidenav.effect-underline:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.sidenav.effect-underline:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}*/
 
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.sidenav a::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0); /* Initially hide the underline */
+  transition: transform 0.3s ease-in-out;
+  
+}
+.sidenav a:hover::after {
+  transform: scaleX(1); /* Show the underline on hover */
+  width:50%;
+  
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 139px;
+  right: 199px;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -276,6 +323,7 @@ width:auto;
         </center><br>
         <nav class="w3-bar w3-black">
             <center>
+                
                 <div class="dropdown">
                     <a href="#home" class="w3-button w3-bar-item">EDIT</a>
                     <div class="dropdown-content">
@@ -408,7 +456,7 @@ width:auto;
                               </div>
                               <script>
                                 function openNav() {
-                                document.getElementById("mySidenav").style.width="250px";
+                                document.getElementById("mySidenav").style.width="300px";
                                 document.getElementById("mySidenav").style.left="85%";
 
                                   
