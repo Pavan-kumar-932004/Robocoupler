@@ -282,6 +282,40 @@
     left:100%;
  
 }
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #c4c4c4;
+}
+
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
 
     .scrolling-text marquee {
 font-weight: bold;
@@ -424,10 +458,17 @@ width:auto;
                                          </nav>
                                          <div id="mySidenav" class="sidenav">
                                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                                            <a href="#">About</a>
-                                            <a href="#">Services</a>
-                                            <a href="#">Clients</a>
-                                            <a href="#">Contact</a>
+
+                                            <button class="dropdown-btn">Dropdown 
+                                                <i class="fa fa-caret-down"></i>
+                                              </button>
+                                              <div class="dropdown-container">
+                                                <a href="#">Link 1</a>
+                                                <a href="#">Link 2</a>
+                                                <a href="#">Link 3</a>
+                                              </div>
+                                            <a href="#">Logout</a>
+                                            
                                             
                                           </div>
                                         
@@ -466,6 +507,20 @@ width:auto;
                                   document.getElementById("mySidenav").style.left="100%";
                                  
                                 }
+                                var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
                               </script>
 
                             
