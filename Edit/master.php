@@ -16,6 +16,12 @@
         height: 100px;
         display: none;
       }
+      #real{
+        object-fit: cover;
+        width: 85px;
+        height: 100px;
+
+      }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,10 +30,13 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
 $(document).ready(function() {
+  var cameraFeedActive = false; // Flag to track if the camera feed is active
+
   $('#edit').click(function() {
     var employeeNumber = $('input[name="ename"]').val();
     console.log('Employee Number:', employeeNumber);
-    
+
+    // First AJAX request to retrieve all columns except time and img
     $.ajax({
       url: 'retrieve_data.php',
       type: 'POST',
@@ -36,25 +45,57 @@ $(document).ready(function() {
         console.log('Response:', response);
         // Update the fields with the retrieved data
         for (var key in response) {
-    if (response.hasOwnProperty(key)) {
-      var value = response[key];
-      $('input[name="' + key + '"]').val(value);
-    }
-  }
-        
-        // Optionally, display a success message
-        $('input[name="isname"]').val(response.insname);
-        $('#msg').val('Data retrieved successfully.');
+          if (response.hasOwnProperty(key)) {
+            var value = response[key];
+            $('input[name="' + key + '"]').val(value);
+          }
+        }
+
+        $('#isname').attr('value',response.insname);
       },
       error: function() {
         // Handle error if any
         $('#msg').val('Error occurred while retrieving data.');
       }
     });
+
+    // Second AJAX request to retrieve the img field separately
+    $.ajax({
+      url: 'retrieve_img.php',
+      type: 'POST',
+      data: { employeenumber: employeeNumber },
+      success: function(respons) {
+        const video = document.getElementById('video');
+        //console.log('Image Response:', response);
+        video.pause();
+        video.srcObject = null; 
+        $('#video').attr('src', ''); // Clear the video source
+        pars=JSON.parse(respons)
+        console.log(pars)
+        var imgSrc = 'data:image/jpeg;base64,' + pars.img;
+        var $img = $('<img>')
+        .attr('src', imgSrc)
+        .attr('id', 'real')
+        .css({
+            'object-fit': 'cover',
+            'width': '85px',
+            'height': '100px'
+            });
+        $('#video').replaceWith($img);
+
+        // Disable the capture button
+        $('#capture-btn').prop('disabled', true);
+      },
+      error: function() {
+        // Handle error if any
+        console.log('Error occurred while retrieving image.');
+      }
+    });
   });
 });
+</script>
 
-    </script>
+
     </head>
     <body>
     <div w3-include-html="../sidebar/test.html"></div>
@@ -168,7 +209,7 @@ $(document).ready(function() {
             
             </div>
      
-<form method="post">
+    <form method="post" enctype="multipart/form-data">
     
         <div class="container">
             <div class="child1">
@@ -300,7 +341,7 @@ $(document).ready(function() {
                 <tr colspan="2">
                     <td><video id="video" autoplay></video><canvas id="canvas"></canvas>
                     <br><button type="button" id="capture-btn" onclick="captureImage()">CAPTURE</button></td>
-                    <input type="hidden" id="imageDataInput" name="imageData" value="">
+                    <input type="hidden" id="imageDataInput" name="img" value="">
                     <td><img src="https://th.bing.com/th?id=OIP.xhI3vErTo4amH0KW569JVQHaHa&w=250&h=250&c=8&rs=1&qlt=30&o=6&dpr=1.3&pid=3.1&rm=2" alt="image1" height="100px" width="100px"><br><button type="submit" id="Scan" name="scan">SCAN</button></td>
                 </tr>
                 <tr>
@@ -348,7 +389,7 @@ $(document).ready(function() {
             <center>
             <div class="butt">
             <button class="button ok" type="submit" id="ok" style="background-color: #c5c221;">SAVE</button>
-            <button class="button delete" type="reset" id="delete" style="background-color: #df8b1c;">RESET</button>
+            <button class="button delete" type="reset" id="delete" onclick=document.location.reload() style="background-color: #df8b1c;" >RESET</button>
             <button class="button close" type="button"  name="edit_button" id="edit" style="background-color: #4CAF50;">VIEW</button>
             </div>
              </center>
@@ -396,89 +437,88 @@ $(document).ready(function() {
       captureBtn.textContent = 'Retake';
       video.pause();
       const imageData = canvas.toDataURL('image/jpeg');
-      const employeeNumber = document.getElementById('ename').value;
-      const fileName = employeeNumber + '.jpg';
-      const filePath = '../Edit/image_database/' + fileName;
-      const link = document.createElement('a');
-      link.href = imageData;
-      link.download = fileName;
-      link.click();
-    } else {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      isCaptured = false;
-      captureBtn.textContent = 'Capture';
-      video.play();
-    }
+      document.getElementById('imageDataInput').value = imageData;
+    } 
+    else {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    isCaptured = false;
+    captureBtn.textContent = 'Capture';
+    video.play();
+        }
   }
 
   run();
 </script>
 
 <?php
-if(isset($_POST["insname"])&&isset($_POST["pname"])&&isset($_POST["ename"])&&isset($_POST["title"])&&isset($_POST["rwname"])&&isset($_POST["sex"])
-&&isset($_POST["dob"])&&isset($_POST["sob"])&&isset($_POST["scode"])&&isset($_POST["qcode"])&&isset($_POST["nwork"])&&isset($_POST["nwork2"])
-&&isset($_POST["nwork3"])&&isset($_POST["tno"])&&isset($_POST["mno"])&&isset($_POST["crw"])&&isset($_POST["aadhar"])&&isset($_POST["tid"])
-&&isset($_POST["mcode"])&&isset($_POST["ocode"])&&isset($_POST["doe"])&&isset($_POST["city"])&&isset($_POST["spl"])&&isset($_POST["idno"])
-&&isset($_POST["dcode"])&&isset($_POST["image"]))
-{
-	include 'phpdump.php';
-	$insname=$_POST["insname"];
-	$pname=$_POST["pname"];
-    $ename=$_POST["ename"];
-    $title=$_POST["title"];
-    $rwname=$_POST["rwname"];
-    $sex=$_POST["sex"];
-    $dob=$_POST["dob"];
-    $sob=$_POST["sob"];
-    $scode=$_POST["scode"];
-    $qcode=$_POST["qcode"];
-    $dcode=$_POST["dcode"];
-    $nwork=$_POST["nwork"];
-    $nwork2=$_POST["nwork2"];
-    $nwork3=$_POST["nwork3"];
-    $tno=$_POST["tno"];
-    $mno=$_POST["mno"];
-    $crw=$_POST["crw"];
-    $aadhar=$_POST["aadhar"];
-    $tid=$_POST["tid"];
-    $idno=$_POST["idno"];
-    $mcode=$_POST["mcode"];
-    $ocode=$_POST["ocode"];
-    $doe=$_POST["doe"];
-    $city=$_POST["city"];
-    $spl=$_POST["spl"];
-    /*$timestamp = date("Y-m-d H:i:s");*/
-    $imgData = $_POST["image"];
-    $filename = uniqid() . '.jpg';
-    $imagePath = 'image_database/' . $filename;
-    $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
-    $imageData = str_replace(' ', '+', $imageData);
-    $imageData = base64_decode($imageData);
-    file_put_contents($imagePath, $imageData);
-    $test="Hello world";
+if (isset($_POST["insname"]) && isset($_POST["pname"]) && isset($_POST["ename"]) && isset($_POST["title"]) && isset($_POST["rwname"]) && isset($_POST["sex"])
+&& isset($_POST["dob"]) && isset($_POST["sob"]) && isset($_POST["scode"]) && isset($_POST["qcode"]) && isset($_POST["dcode"]) && isset($_POST["nwork"]) && isset($_POST["nwork2"])
+&& isset($_POST["nwork3"]) && isset($_POST["tno"]) && isset($_POST["mno"]) && isset($_POST["crw"]) && isset($_POST["aadhar"]) && isset($_POST["tid"])
+&& isset($_POST["mcode"]) && isset($_POST["ocode"]) && isset($_POST["doe"]) && isset($_POST["city"]) && isset($_POST["spl"]) && isset($_POST["idno"]) && isset($_POST["img"])) {
 
-	$con=@mysqli_connect($server_name,$username,$password,$database);
-	
-	@$query="INSERT INTO name_master VALUES('$insname','$pname','$ename','$title','$rwname','$sex','$dob','$sob','$scode','$qcode','$dcode','$nwork','$nwork2',
-    '$nwork3','$tno','$mno','$crw','$aadhar','$tid','$idno','$mcode','$ocode','$doe','$city','$spl','$test',CURRENT_TIME())";
-	
-	if(mysqli_query($con,$query)){
-		echo '<script type="text/javascript">';
-		echo 'var inputField = document.getElementById("msg");';
-		echo 'inputField.value = "Updation Succesful";';
-		echo '</script>';
-	}
-	else{
-		echo '<script type="text/javascript">';
-		echo 'var inputField = document.getElementById("msg");';
-		echo 'inputField.value = "Not updated";';
-		echo '</script>';
-	}
-	mysqli_close($con);
+include 'phpdump.php';
+
+// Get the form data
+$insname = $_POST["insname"];
+$pname = $_POST["pname"];
+$ename = $_POST["ename"];
+$title = $_POST["title"];
+$rwname = $_POST["rwname"];
+$sex = $_POST["sex"];
+$dob = $_POST["dob"];
+$sob = $_POST["sob"];
+$scode = $_POST["scode"];
+$qcode = $_POST["qcode"];
+$dcode = $_POST["dcode"];
+$nwork = $_POST["nwork"];
+$nwork2 = $_POST["nwork2"];
+$nwork3 = $_POST["nwork3"];
+$tno = $_POST["tno"];
+$mno = $_POST["mno"];
+$crw = $_POST["crw"];
+$aadhar = $_POST["aadhar"];
+$tid = $_POST["tid"];
+$idno = $_POST["idno"];
+$mcode = $_POST["mcode"];
+$ocode = $_POST["ocode"];
+$doe = $_POST["doe"];
+$city = $_POST["city"];
+$spl = $_POST["spl"];
+$imageData = $_POST["img"];
+$imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+$imageData = str_replace(' ', '+', $imageData);
+$imageData = base64_decode($imageData);
+
+$con = mysqli_connect($server_name, $username, $password, $database);
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Insert into the database
+$query = "INSERT INTO name_master (insname, pname, ename, title, rwname, sex, dob, sob, scode, qcode, dcode, nwork, nwork2, nwork3, tno, mno, crw, aadhar, tid, idno, mcode, ocode, doe, city, spl, img) 
+    VALUES ('$insname', '$pname', '$ename', '$title', '$rwname', '$sex', '$dob', '$sob', '$scode', '$qcode', '$dcode', '$nwork', '$nwork2', '$nwork3', '$tno', '$mno', '$crw', '$aadhar', '$tid', '$idno', '$mcode', '$ocode', '$doe', '$city', '$spl', ?)";
+
+$stmt = mysqli_prepare($con, $query);
+mysqli_stmt_bind_param($stmt, "s", $imageData);
+mysqli_stmt_send_long_data($stmt, 0, $imageData);
+
+if (mysqli_stmt_execute($stmt)) {
+    echo '<script type="text/javascript">';
+    echo 'var inputField = document.getElementById("msg");';
+    echo 'inputField.value = "Updation Successful";';
+    echo '</script>';
+} else {
+    echo '<script type="text/javascript">';
+    echo 'var inputField = document.getElementById("msg");';
+    echo 'inputField.value = "Not updated";';
+    echo '</script>';
+}
+
+mysqli_stmt_close($stmt);
+mysqli_close($con);
 }
 
 ?>
-
 </body>
 </html>
 
