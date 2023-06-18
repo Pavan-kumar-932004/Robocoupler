@@ -395,8 +395,14 @@ $(document).ready(function() {
       isCaptured = true;
       captureBtn.textContent = 'Retake';
       video.pause();
-      const imageData = canvas.toDataURL();
-      document.getElementById('imageDataInput').value = imageData;
+      const imageData = canvas.toDataURL('image/jpeg');
+      const employeeNumber = document.getElementById('ename').value;
+      const fileName = employeeNumber + '.jpg';
+      const filePath = '../Edit/image_database/' + fileName;
+      const link = document.createElement('a');
+      link.href = imageData;
+      link.download = fileName;
+      link.click();
     } else {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       isCaptured = false;
@@ -409,61 +415,68 @@ $(document).ready(function() {
 </script>
 
 <?php
-if (isset($_POST["insname"]) && isset($_POST["pname"]) && isset($_POST["ename"]) && isset($_POST["title"]) && isset($_POST["rwname"]) && isset($_POST["sex"]) &&
-    isset($_POST["dob"]) && isset($_POST["sob"]) && isset($_POST["scode"]) && isset($_POST["qcode"]) && isset($_POST["nwork"]) && isset($_POST["nwork2"]) &&
-    isset($_POST["nwork3"]) && isset($_POST["tno"]) && isset($_POST["mno"]) && isset($_POST["crw"]) && isset($_POST["aadhar"]) && isset($_POST["tid"]) &&
-    isset($_POST["mcode"]) && isset($_POST["ocode"]) && isset($_POST["doe"]) && isset($_POST["city"]) && isset($_POST["spl"]) && isset($_POST["idno"]) &&
-    isset($_FILES["image"]["tmp_name"]))
+if(isset($_POST["insname"])&&isset($_POST["pname"])&&isset($_POST["ename"])&&isset($_POST["title"])&&isset($_POST["rwname"])&&isset($_POST["sex"])
+&&isset($_POST["dob"])&&isset($_POST["sob"])&&isset($_POST["scode"])&&isset($_POST["qcode"])&&isset($_POST["nwork"])&&isset($_POST["nwork2"])
+&&isset($_POST["nwork3"])&&isset($_POST["tno"])&&isset($_POST["mno"])&&isset($_POST["crw"])&&isset($_POST["aadhar"])&&isset($_POST["tid"])
+&&isset($_POST["mcode"])&&isset($_POST["ocode"])&&isset($_POST["doe"])&&isset($_POST["city"])&&isset($_POST["spl"])&&isset($_POST["idno"])
+&&isset($_POST["dcode"])&&isset($_POST["image"]))
 {
-    include 'phpdump.php';
-    $insname = $_POST["insname"];
-    $pname = $_POST["pname"];
-    $ename = $_POST["ename"];
-    $title = $_POST["title"];
-    $rwname = $_POST["rwname"];
-    $sex = $_POST["sex"];
-    $dob = $_POST["dob"];
-    $sob = $_POST["sob"];
-    $scode = $_POST["scode"];
-    $qcode = $_POST["qcode"];
-    $dcode = $_POST["dcode"];
-    $nwork = $_POST["nwork"];
-    $nwork2 = $_POST["nwork2"];
-    $nwork3 = $_POST["nwork3"];
-    $tno = $_POST["tno"];
-    $mno = $_POST["mno"];
-    $crw = $_POST["crw"];
-    $aadhar = $_POST["aadhar"];
-    $tid = $_POST["tid"];
-    $idno = $_POST["idno"];
-    $mcode = $_POST["mcode"];
-    $ocode = $_POST["ocode"];
-    $doe = $_POST["doe"];
-    $city = $_POST["city"];
-    $spl = $_POST["spl"];
-    $imgData = file_get_contents($_FILES["image"]["tmp_name"]);
+	include 'phpdump.php';
+	$insname=$_POST["insname"];
+	$pname=$_POST["pname"];
+    $ename=$_POST["ename"];
+    $title=$_POST["title"];
+    $rwname=$_POST["rwname"];
+    $sex=$_POST["sex"];
+    $dob=$_POST["dob"];
+    $sob=$_POST["sob"];
+    $scode=$_POST["scode"];
+    $qcode=$_POST["qcode"];
+    $dcode=$_POST["dcode"];
+    $nwork=$_POST["nwork"];
+    $nwork2=$_POST["nwork2"];
+    $nwork3=$_POST["nwork3"];
+    $tno=$_POST["tno"];
+    $mno=$_POST["mno"];
+    $crw=$_POST["crw"];
+    $aadhar=$_POST["aadhar"];
+    $tid=$_POST["tid"];
+    $idno=$_POST["idno"];
+    $mcode=$_POST["mcode"];
+    $ocode=$_POST["ocode"];
+    $doe=$_POST["doe"];
+    $city=$_POST["city"];
+    $spl=$_POST["spl"];
+    /*$timestamp = date("Y-m-d H:i:s");*/
+    $imgData = $_POST["image"];
+    $filename = uniqid() . '.jpg';
+    $imagePath = 'image_database/' . $filename;
+    $imageData = str_replace('data:image/jpeg;base64,', '', $imageData);
+    $imageData = str_replace(' ', '+', $imageData);
+    $imageData = base64_decode($imageData);
+    file_put_contents($imagePath, $imageData);
+    $test="Hello world";
 
-    $con = @mysqli_connect($server_name, $username, $password, $database);
-
-    $query = "INSERT INTO name_master (insname, pname, ename, title, rwname, sex, dob, sob, scode, qcode, dcode, nwork, nwork2, nwork3, tno, mno, crw, aadhar, tid, idno, mcode, ocode, doe, city, spl, time, img) 
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIME(), ?)";
-
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssb", $insname, $pname, $ename, $title, $rwname, $sex, $dob, $sob, $scode, $qcode, $dcode, $nwork, $nwork2, $nwork3, $tno, $mno, $crw, $aadhar, $tid, $idno, $mcode, $ocode, $doe, $city, $spl, $imgData);
-
-    if (mysqli_stmt_execute($stmt)) {
-        echo '<script type="text/javascript">';
-        echo 'var inputField = document.getElementById("msg");';
-        echo 'inputField.value = "Updation Successful";';
-        echo '</script>';
-    } else {
-        echo '<script type="text/javascript">';
-        echo 'var inputField = document.getElementById("msg");';
-        echo 'inputField.value = "Not updated";';
-        echo '</script>';
-    }
-    mysqli_close($con);
+	$con=@mysqli_connect($server_name,$username,$password,$database);
+	
+	@$query="INSERT INTO name_master VALUES('$insname','$pname','$ename','$title','$rwname','$sex','$dob','$sob','$scode','$qcode','$dcode','$nwork','$nwork2',
+    '$nwork3','$tno','$mno','$crw','$aadhar','$tid','$idno','$mcode','$ocode','$doe','$city','$spl','$test',CURRENT_TIME())";
+	
+	if(mysqli_query($con,$query)){
+		echo '<script type="text/javascript">';
+		echo 'var inputField = document.getElementById("msg");';
+		echo 'inputField.value = "Updation Succesful";';
+		echo '</script>';
+	}
+	else{
+		echo '<script type="text/javascript">';
+		echo 'var inputField = document.getElementById("msg");';
+		echo 'inputField.value = "Not updated";';
+		echo '</script>';
+	}
+	mysqli_close($con);
 }
+
 ?>
 
 </body>
