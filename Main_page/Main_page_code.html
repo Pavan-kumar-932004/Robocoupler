@@ -1,6 +1,34 @@
 <html>
     <head>
         <title>operatorinfo</title>
+        <script>fetch('../login/check.php')
+          .then(response => response.text())
+          .then(data => {
+            if (data === 'redirect') {
+              alert("Please login to continue.");
+              window.location.href = '../login/main.php';
+            }
+          })
+          .catch(error => {
+          });
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+           document.getElementById('logout-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('../login/logout.php')
+            .then(response => response.text())
+            .then(data => {
+              if (data === 'success') {
+                window.location.href = '../login/main.php';
+              } 
+                        })
+            .catch(error => {
+            // Handle fetch error.
+            });
+          });
+});
+   </script>
     </head>
     <body bgcolor="blue">
         
@@ -467,7 +495,8 @@ width:auto;
                                                 <a href="#">Link 2</a>
                                                 <a href="#">Link 3</a>
                                               </div>
-                                            <a href="#">Logout</a>
+                                              <a href="#" id="logout-link">Logout</a>
+
                                             
                                             
                                           </div>

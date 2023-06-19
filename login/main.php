@@ -217,47 +217,61 @@ if(isset($_SESSION["auth"]))
             
             showSlide();
           </script>
+<?php
+$server_name = "localhost";
+$username = "root";
+$password = "";
+$database = "master";
+$con = mysqli_connect($server_name, $username, $password, $database);
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-            <?php
-            $server_name="localhost";
-            $username="root";
-            $password="";
-            $database="master";
-            $con=@mysqli_connect($server_name,$username,$password,$database);
-            if (isset($_POST['username'])&&isset($_POST['password'])) {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-        
-                $sql = "select * from login where username = '$username' and password = '$password'";  
-                $result = mysqli_query($con, $sql);   
+    $sql = "select * from login where username = '$username' and password = '$password'";
+    $result = mysqli_query($con, $sql);
 
-                if(mysqli_num_rows($result) > 0){  
-
-                  foreach($result as $row){
-                    $username=$row['username'];
-                    $password=$row['password'];
-                  }
-                    
-                    $_SESSION["auth"] = true;
-                    $_SESSION['auth_user']=[
-                      'username'=>$username,
-                      'password'=>$password
-                    ];
-                    $_SESSION['status']="logged in successfully";
-                    echo  '<script>
-                                window.location = "../Main_page/Main_page_code.html";
-                           </script>';
-                    exit();
-                }  
-                else{  
-                    echo  '<script>
-                                window.location.href = "main.php";
-                                alert("Login failed. Invalid username or password!!")
-                            </script>';
-                }     
-                mysqli_close($con);
+    if (mysqli_num_rows($result) > 0) {
+        foreach ($result as $row) {
+            $username = $row['username'];
+            $password = $row['password'];
+        }
+        $userIP = $_SERVER['REMOTE_ADDR'];
+        $userInfo = [
+            'username' => $username,
+            'ip_address' => $userIP,
+            'status' => 1
+        ];
+        $jsonData = file_get_contents('../Database/users.json');
+        $users = json_decode($jsonData, true);
+        $userFound = false;
+        foreach ($users as &$user) {
+            if ($user['username'] === $username) {
+                $userFound = true;
+                if ($user['status'] === 0) {
+                    $user['status'] = 1;
+                }
+                break;
             }
-            ?>
+        }
+        if (!$userFound) {
+            $users[] = $userInfo;
+        }
+        $jsonData = json_encode($users, JSON_PRETTY_PRINT);
+        file_put_contents('../Database/users.json', $jsonData);
+        echo '<script>
+                    window.location = "../Main_page/Main_page_code.html";
+               </script>';
+        exit();
+    } else {
+        echo '<script>
+                    window.location.href = "main.php";
+                    alert("Login failed. Invalid username or password!!");
+                </script>';
+    }
+    mysqli_close($con);
+}
+?>
+
 
             
 
