@@ -222,8 +222,9 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left:0;
-  background: linear-gradient(360deg, rgb(67, 92, 201) 15%, rgb(72, 154, 201)25%, rgb(92, 161, 201) 35%, 
-  rgb(178, 153, 238) 50%, rgb(178, 153, 238) 65%, rgb(72, 154, 201) 80%, rgb(67, 92, 201) 100%);
+  background: linear-gradient(360deg, rgb(67, 92, 201) 15%, rgb(72, 154, 201)25%, rgb(67, 92, 201) 100%);
+  /*rgb(178, 153, 238) 50%, rgb(178, 153, 238)  rgb(92, 161, 201) 35%, 
+  65%, rgb(72, 154, 201) 80%,*/
 
   /*background-color: #111;  Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
@@ -285,12 +286,6 @@
   transition: transform 0.3s ease-in-out;
   
 }
-.sidenav a:hover::after {
-  transform: scaleX(1); /* Show the underline on hover */
-  width:50%;
-  
-}
-
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
@@ -309,33 +304,6 @@
     width: 0px;
     left:100%;
  
-}
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #ffffff;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-/* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #c4c4c4;
-}
-
-
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
 }
 
 /* Optional: Style the caret down icon */
@@ -359,7 +327,7 @@ left: 0;
 right: 0;
 width:auto;
 }
-  
+
 
         </style>
          <div class="context">
@@ -487,14 +455,15 @@ width:auto;
                                          <div id="mySidenav" class="sidenav">
                                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-                                            <button class="dropdown-btn">Dropdown 
-                                                <i class="fa fa-caret-down"></i>
-                                              </button>
-                                              <div class="dropdown-container">
-                                                <a href="#">Link 1</a>
-                                                <a href="#">Link 2</a>
-                                                <a href="#">Link 3</a>
-                                              </div>
+                                            <div class="" id="wrapper">
+                                              <p class="">
+                                                Frequently visited</p>
+                                              <ul>
+                                                <li>1</li>
+                                                <li>2</li>
+                                                <li>3</li>
+                                              </ul>  
+                                            </div>
                                               <a href="#" id="logout-link">Logout</a>
 
                                             
@@ -536,20 +505,7 @@ width:auto;
                                   document.getElementById("mySidenav").style.left="100%";
                                  
                                 }
-                                var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
+                               
                               </script>
 
                             
