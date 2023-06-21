@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" type="text/css" href="../sidebar/styles.css"><?php
-// Get the current page's URL
-$pageURL = $_SERVER['REQUEST_URI'];
-
-// Define the path to the JSON file
-$jsonFilePath = '../visits/count.json';
-
-// Read the JSON file contents
-$jsonData = file_get_contents($jsonFilePath);
-
-// Convert the JSON data to an associative array
-$visitsData = json_decode($jsonData, true);
-
-// Check if the page URL already exists in the data
-if (!isset($visitsData[$pageURL])) {
-  // Set the visit count to 1 for a new page
-  $visitsData[$pageURL] = 1;
-} else {
-  // Increment the visit count for an existing page
-  $visitsData[$pageURL]++;
-}
-
-// Convert the updated data back to JSON
-$updatedJsonData = json_encode($visitsData);
-
-// Write the updated JSON data back to the file
-file_put_contents($jsonFilePath, $updatedJsonData);
-?>
+<head><link rel="stylesheet" type="text/css" href="../sidebar/styles.css">
 
 
 

@@ -28,6 +28,35 @@
             });
           });
 });
+// Function to track IP visits
+function trackVisits() {
+  const pageURL = window.location.pathname;
+  const pageTitle = document.title;
+
+  // Make an AJAX request to the PHP file
+  fetch('../login/track_visits.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'pageURL=' + encodeURIComponent(pageURL) + '&pageTitle=' + encodeURIComponent(pageTitle)
+  })
+  .then(response => response.json())
+  .then(data => {
+    const visitCount = data.count;
+    console.log('Visit Count:', visitCount);
+    // Do something with the visit count, such as updating it on the webpage
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+
+// Execute the tracking code when the webpage finishes loading
+window.onload = function() {
+  trackVisits();
+};
+
    </script>
     </head>
     <body bgcolor="blue">
